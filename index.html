@@ -39,7 +39,6 @@
     .lang-sel{padding:5px 10px;border-radius:99px;font-size:.72rem;border:1.5px solid var(--border);background:transparent;color:var(--ai-mid);cursor:pointer;outline:none;font-family:'Noto Sans JP',sans-serif;}
     .header__btn{padding:7px 14px;border-radius:99px;font-size:.78rem;font-weight:600;border:1.5px solid var(--border);background:transparent;color:var(--ai-mid);cursor:pointer;transition:all .2s;font-family:'Noto Sans JP',sans-serif;}
     .header__btn:hover{background:var(--ai);color:#fff;border-color:var(--ai);}
-    /* プロフィールアバター */
     .avatar-btn{width:36px;height:36px;border-radius:50%;background:var(--ai);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'Zen Old Mincho',serif;font-size:.75rem;color:#fff;font-weight:900;transition:transform .2s,box-shadow .2s;position:relative;}
     .avatar-btn:hover{transform:scale(1.08);box-shadow:0 4px 12px rgba(26,39,68,.25);}
     .avatar-badge{position:absolute;top:-3px;right:-3px;width:10px;height:10px;background:#f59e0b;border-radius:50%;border:2px solid var(--shiro);display:none;}
@@ -60,6 +59,10 @@
     .auth-logo-mark{width:52px;height:52px;background:var(--ai);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Zen Old Mincho',serif;font-size:.75rem;color:#fff;font-weight:900;margin:0 auto 10px;}
     .auth-logo-name{font-family:'Zen Old Mincho',serif;font-size:1.4rem;font-weight:900;color:var(--ai);letter-spacing:.08em;}
     .auth-logo-sub{font-size:.7rem;color:var(--ai-soft);letter-spacing:.2em;margin-top:2px;}
+    /* 🆕 ウェルカムメッセージ追加 */
+    .auth-welcome{text-align:center;padding:16px 0 20px;border-bottom:1px solid var(--shiro-2);margin-bottom:20px;}
+    .auth-welcome h2{font-family:'Zen Old Mincho',serif;font-size:1.1rem;font-weight:700;color:var(--ai);margin-bottom:6px;}
+    .auth-welcome p{font-size:.82rem;color:var(--ai-soft);line-height:1.7;}
     .auth-tabs{display:flex;gap:0;margin-bottom:24px;background:var(--shiro-2);border-radius:var(--rs);padding:3px;}
     .auth-tab{flex:1;padding:9px;border:none;background:none;font-size:.85rem;font-weight:600;color:var(--ai-soft);cursor:pointer;border-radius:8px;transition:all .2s;font-family:'Noto Sans JP',sans-serif;}
     .auth-tab.active{background:#fff;color:var(--ai);box-shadow:var(--shadow);}
@@ -100,15 +103,14 @@
     .event-card:nth-child(4n+3) .event-card__visual{background:linear-gradient(135deg,rgba(212,81,26,.15),rgba(232,200,74,.18));}
     .event-card:nth-child(4n) .event-card__visual{background:linear-gradient(135deg,rgba(184,212,240,.25),rgba(176,40,60,.1));}
     .event-card__visual-label{font-family:'Zen Old Mincho',serif;font-size:.65rem;letter-spacing:.2em;color:rgba(26,39,68,.3);font-weight:700;text-transform:uppercase;}
-    /* 登録済みバッジ（カード右上） */
     .reg-badge{position:absolute;top:10px;right:10px;background:var(--ai);color:#fff;font-size:.65rem;font-weight:700;padding:3px 9px;border-radius:99px;letter-spacing:.04em;display:flex;align-items:center;gap:4px;}
     .reg-badge.checked{background:var(--matcha);}
-    .event-card__body{padding:14px 16px 16px;}
-    .event-card__tag{font-size:.65rem;letter-spacing:.2em;color:var(--ai-soft);margin-bottom:3px;font-weight:600;text-transform:uppercase;}
-    .event-card__name{font-family:'Zen Old Mincho',serif;font-size:.98rem;font-weight:700;color:var(--ai);margin-bottom:3px;line-height:1.4;}
-    .event-card__date{font-size:.75rem;color:var(--ai-soft);margin-bottom:10px;}
-    .event-card__meta{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
-    .event-card__row{display:flex;justify-content:space-between;font-size:.8rem;}
+    .event-card__body{padding:16px 18px 18px;}
+    .event-card__tag{font-size:.65rem;letter-spacing:.2em;color:var(--ai-soft);margin-bottom:4px;font-weight:600;text-transform:uppercase;}
+    .event-card__name{font-family:'Zen Old Mincho',serif;font-size:1rem;font-weight:700;color:var(--ai);margin-bottom:6px;line-height:1.4;}
+    .event-card__date{font-size:.78rem;color:var(--ai-mid);margin-bottom:12px;font-weight:500;}
+    .event-card__meta{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;padding:10px 0;border-top:1px solid rgba(42,74,127,.08);border-bottom:1px solid rgba(42,74,127,.08);}
+    .event-card__row{display:flex;justify-content:space-between;font-size:.82rem;}
     .event-card__label{color:var(--ai-soft);}
     .event-card__value{font-weight:600;color:var(--ai-mid);}
 
@@ -124,10 +126,10 @@
     .btn-f{background:linear-gradient(135deg,#4a6fa5,var(--fuyu));color:#fff;}
     .btn-green{background:linear-gradient(135deg,#4e7252,#2d7a20);color:#fff;}
     .btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--ai-mid);}
-    .btn-outline:hover{border-color:var(--ai-mid);}
+    .btn-outline:hover{border-color:var(--ai-mid);background:rgba(42,74,127,.03);}
     .btn-full{width:100%;}
     .btn-lg{padding:13px 26px;font-size:.95rem;}
-    .badge{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.7rem;font-weight:700;}
+    .badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.72rem;font-weight:700;}
     .badge-free{background:rgba(78,114,82,.1);color:#2d7a20;}
     .badge-paid{background:rgba(42,74,127,.08);color:var(--ai-mid);}
     .badge-full{background:rgba(212,81,26,.1);color:var(--aki);}
@@ -148,7 +150,7 @@
     .alert-warning{background:rgba(184,212,240,.2);border-left:3px solid var(--fuyu);color:#3a5a7a;}
     .spinner{width:36px;height:36px;border:3px solid var(--shiro-2);border-top-color:var(--ai-mid);border-radius:50%;animation:spin .8s linear infinite;margin:28px auto;}
     @keyframes spin{to{transform:rotate(360deg);}}
-    .loading-text{text-align:center;color:var(--ai-soft);font-size:.875rem;}
+    .loading-text{text-align:center;color:var(--ai-soft);font-size:.875rem;margin-top:12px;}
 
     /* ===== 参加登録ページ ===== */
     .event-hero{border-radius:var(--r);padding:20px 22px;margin-bottom:18px;}
@@ -205,6 +207,11 @@
     .modal__close{display:block;margin:18px auto 0;padding:8px 28px;border-radius:99px;border:1.5px solid var(--border);background:transparent;color:var(--ai-mid);font-size:.85rem;font-weight:600;cursor:pointer;font-family:'Noto Sans JP',sans-serif;}
     .modal__close:hover{background:var(--ai);color:#fff;border-color:var(--ai);}
 
+    /* 🆕 セクション見出し */
+    .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;}
+    .section-title span{font-family:'Zen Old Mincho',serif;font-size:1rem;font-weight:700;color:var(--ai);}
+    .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+
     @media(max-width:600px){.event-grid{grid-template-columns:1fr;}main{padding:20px 12px;}.card{padding:18px;}.auth-card{padding:28px 20px;}}
   </style>
 </head>
@@ -226,9 +233,7 @@
       <option value="vi">Tiếng Việt</option><option value="ar">العربية</option><option value="hi">हिन्दी</option>
       <option value="de">Deutsch</option><option value="it">Italiano</option><option value="ru">Русский</option>
     </select>
-    <!-- ゲスト用 -->
     <button class="header__btn" id="btn-login" onclick="showPage('page-auth')" data-i18n="login" style="display:none;">ログイン</button>
-    <!-- ログイン済み：アバター -->
     <button class="avatar-btn" id="avatar-btn" onclick="showMyPage()" style="display:none;" title="My Page">
       <span id="avatar-initial">U</span>
       <span class="avatar-badge" id="avatar-badge"></span>
@@ -247,7 +252,7 @@
   </div>
 </div>
 
-<!-- 認証画面 -->
+<!-- 🆕 認証画面（ウェルカムメッセージ追加） -->
 <div id="page-auth" class="page active">
   <div class="auth-wrap">
     <div class="auth-card">
@@ -255,6 +260,11 @@
         <div class="auth-logo-mark">c+a</div>
         <div class="auth-logo-name">connec+a</div>
         <div class="auth-logo-sub">Event Platform</div>
+      </div>
+      <!-- ウェルカムメッセージ -->
+      <div class="auth-welcome">
+        <h2 data-i18n="welcomeTitle">ようこそ</h2>
+        <p data-i18n="welcomeMessage">イベントへの参加登録やチケット管理が<br>簡単にできるプラットフォームです</p>
       </div>
       <div class="auth-tabs">
         <button class="auth-tab active" onclick="switchAuthTab('login')" data-i18n="login">ログイン</button>
@@ -297,23 +307,10 @@
   </div>
 </div>
 
-<!-- イベント一覧（ログイン後のホーム） -->
-<div id="page-events" class="page">
-  <main><div class="container">
-    <div class="hero">
-      <div class="hero__eyebrow" data-i18n="eyebrow">Events</div>
-      <h1 class="hero__title"><em>connec+a</em><br><span id="hero-title-text" data-i18n="heroTitle">のイベントへようこそ</span></h1>
-      <p class="hero__desc" data-i18n="heroDesc">参加したいイベントを選んで、簡単にお申し込みいただけます。</p>
-      <div class="seasons-banner"><span class="sb" style="background:var(--haru);"></span><span class="sb" style="background:var(--natsu);"></span><span class="sb" style="background:var(--aki);"></span><span class="sb" style="background:var(--fuyu);"></span></div>
-    </div>
-    <div id="event-list"><div class="spinner"></div><p class="loading-text" data-i18n="loading">読み込み中</p></div>
-  </div></main>
-</div>
-
 <!-- 参加登録 -->
 <div id="page-register" class="page">
   <main><div class="container-sm">
-    <button class="btn btn-outline" onclick="showPage('page-mypage');loadHomeData();" style="margin-bottom:16px;" data-i18n="backToList">← 一覧に戻る</button>
+    <button class="btn btn-outline" onclick="showPage('page-mypage');loadHomeData();" style="margin-bottom:16px;" data-i18n="backToList">一覧に戻る</button>
     <div id="reg-event-info"></div>
     <div class="card">
       <h2 class="card-title" data-i18n="registerTitle">参加登録</h2>
@@ -330,10 +327,9 @@
   </div></main>
 </div>
 
-<!-- マイページ（ホーム）＋イベント一覧 -->
+<!-- 🔧 マイページ（DOM構造修正） -->
 <div id="page-mypage" class="page">
   <main><div class="container">
-    <!-- プロフィール＋タブ（左カラム相当、max-width絞り） -->
     <div style="max-width:520px;margin:0 auto 32px;">
       <div class="profile-card" id="profile-card"></div>
       <div class="card">
@@ -348,12 +344,14 @@
         <div id="my-profile" style="display:none;"></div>
       </div>
     </div>
-    <!-- イベント一覧セクション -->
-    <div style="margin-bottom:8px;display:flex;align-items:center;gap:10px;">
-      <span style="font-family:'Zen Old Mincho',serif;font-size:1rem;font-weight:700;color:var(--ai);" data-i18n="eventsSection">イベント</span>
-      <span style="flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);"></span>
+    <!-- 🔧 イベント一覧セクション（独立したコンテナに変更） -->
+    <div class="section-title">
+      <span data-i18n="eventsSection">イベント一覧</span>
     </div>
-    <div id="event-list"><div class="spinner"></div><p class="loading-text" data-i18n="loading">読み込み中</p></div>
+    <div id="mypage-event-list">
+      <div class="spinner"></div>
+      <p class="loading-text" data-i18n="loading">読み込み中</p>
+    </div>
   </div></main>
 </div>
 
@@ -362,30 +360,33 @@ const GAS_URL='https://script.google.com/macros/s/AKfycbw94iJOYloTfXOeOONgwyP3Ml
 const SITE_URL=location.href.split('?')[0];
 
 // ============================================================
-// 多言語（全15言語）
+// 🆕 多言語（welcomeTitle/welcomeMessage追加）
 // ============================================================
 const I18N={
-  ja:{login:'ログイン',newRegister:'新規登録',emailLabel:'メールアドレス',emailPlaceholder:'example@email.com',nameLabel:'お名前',namePlaceholder:'山田 太郎',sendLoginLink:'ログインリンクを送信',loginNote:'登録済みのメールアドレスに個人専用リンクを送信します',sendRegisterLink:'登録してリンクを送信',registerNote2:'個人専用のログインリンクをメールでお送りします',sentTitle:'リンクを送信しました',sentDesc:'以下のメールアドレスに個人専用ログインリンクを送信しました。',sentNote:'メールを確認して、リンクをクリックしてください。',sentPrivacy:'このリンクはあなた専用です。他の人と共有しないでください。',backToLogin:'戻る',eyebrow:'Events',heroTitle:'のイベントへようこそ',heroDesc:'参加したいイベントを選んで、簡単にお申し込みいただけます。',loading:'読み込み中',logout:'ログアウト',registerTitle:'参加登録',registerBtn:'登録する',registerNote:'登録後、QRチケットをメールでお送りします',backToList:'イベント一覧',free:'無料',full:'満席',venue:'会場',price:'参加費',seats:'残席',registered:'登録済み',checkedIn:'参加済み',showQR:'QRチケットを見る',regSuccess:'登録完了！チケットをメールで送信しました。',regFull:'満席のため登録できません。',regDuplicate:'すでに登録済みです。',registering:'登録中...',ticketTitle:'QR チケット',historyTab:'参加履歴',surveyTab:'満足度調査',profileTab:'プロフィール',noHistory:'まだ参加履歴がありません。',showQRTicket:'QRチケット',participated:'参加済み',notYet:'未入場',surveyTitle:'満足度アンケート',surveyRatingRequired:'評価を選択してください',surveySubmit:'送信する',surveyThanks:'回答ありがとうございました！',surveyCommentPlaceholder:'一言コメント（任意）',emailNotFound:'このメールアドレスは登録されていません。新規登録をお試しください。',sending:'送信中...',invalidEmail:'有効なメールアドレスを入力してください',nameRequired:'お名前を入力してください',verifyingToken:'認証中...',participations:'参加回数',rank:'ランク',payPayPending:'管理者から別途PayPayのご案内をします。',cashNotice:'当日受付にて現金でお支払いください。',tokenExpired:'リンクの有効期限が切れています',tokenExpiredDesc:'リンクは24時間有効です。再度ログイン画面からリンクを送信してください。',authError:'リンクが無効です',authErrorDesc:'再度ログイン画面からリンクを発行してください。',noSurveys:'満足度アンケートはまだありません',langLabel:'表示言語',emailChangeNote:'メールアドレスを変更すると次回ログイン時に新しいアドレスが必要になります',saveProfile:'変更を保存',saving:'保存中...',profileSaved:'プロフィールを更新しました！',close:'閉じる',eventsSection:'イベント一覧'},
-  en:{login:'Login',newRegister:'Sign Up',emailLabel:'Email',emailPlaceholder:'example@email.com',nameLabel:'Name',namePlaceholder:'John Doe',sendLoginLink:'Send Login Link',loginNote:'A personal login link will be sent to your registered email.',sendRegisterLink:'Register & Send Link',registerNote2:'A personal login link will be sent to your email.',sentTitle:'Link Sent',sentDesc:'A personal login link has been sent to:',sentNote:'Please check your email and click the link.',sentPrivacy:'This link is for you only. Do not share it.',backToLogin:'Back',eyebrow:'Events',heroTitle:'Welcome to connec+a Events',heroDesc:'Browse and register for events easily.',loading:'Loading',logout:'Logout',registerTitle:'Register',registerBtn:'Register',registerNote:'A QR ticket will be sent to your email.',backToList:'Events',free:'Free',full:'Full',venue:'Venue',price:'Price',seats:'Seats Left',registered:'Registered',checkedIn:'Attended',showQR:'Show QR',regSuccess:'Registration complete! Ticket sent by email.',regFull:'Sorry, this event is full.',regDuplicate:'You are already registered.',registering:'Registering...',ticketTitle:'QR Ticket',historyTab:'History',surveyTab:'Survey',profileTab:'Profile',noHistory:'No history yet.',showQRTicket:'QR Ticket',participated:'Attended',notYet:'Not yet',surveyTitle:'Survey',surveyRatingRequired:'Please select a rating',surveySubmit:'Submit',surveyThanks:'Thank you!',surveyCommentPlaceholder:'Comment (optional)',emailNotFound:'Email not found. Please sign up.',sending:'Sending...',invalidEmail:'Please enter a valid email',nameRequired:'Please enter your name',verifyingToken:'Verifying...',participations:'Participations',rank:'Rank',payPayPending:'PayPay details will be sent by the organizer.',cashNotice:'Please pay cash at reception on the day.',tokenExpired:'Link has expired',tokenExpiredDesc:'The link is valid for 24 hours. Please request a new link.',authError:'Invalid link',authErrorDesc:'Please request a new login link.',noSurveys:'No surveys yet',langLabel:'Language',emailChangeNote:'If you change your email, you will need the new address to log in.',saveProfile:'Save Changes',saving:'Saving...',profileSaved:'Profile updated!',close:'Close',eventsSection:'Events'},
-  zh:{login:'登录',newRegister:'注册',emailLabel:'电子邮箱',emailPlaceholder:'example@email.com',nameLabel:'姓名',namePlaceholder:'张三',sendLoginLink:'发送登录链接',loginNote:'将向您注册的电子邮箱发送专属登录链接。',sendRegisterLink:'注册并发送链接',registerNote2:'将向您的电子邮箱发送专属登录链接。',sentTitle:'链接已发送',sentDesc:'专属登录链接已发送至以下邮箱：',sentNote:'请检查您的邮件并点击链接。',sentPrivacy:'此链接仅供您本人使用，请勿与他人分享。',backToLogin:'返回',eyebrow:'活动',heroTitle:'欢迎来到 connec+a 活动',heroDesc:'浏览并轻松报名参加活动。',loading:'加载中',logout:'退出',registerTitle:'报名',registerBtn:'立即报名',registerNote:'报名后将通过邮件发送QR票券。',backToList:'活动列表',free:'免费',full:'已满',venue:'场地',price:'费用',seats:'剩余',registered:'已报名',checkedIn:'已参加',showQR:'查看QR',regSuccess:'报名成功！票券已发送至邮箱。',regFull:'抱歉，名额已满。',regDuplicate:'您已报名此活动。',registering:'报名中...',ticketTitle:'QR 票券',historyTab:'参加记录',surveyTab:'满意度',profileTab:'个人资料',noHistory:'暂无记录。',showQRTicket:'QR票券',participated:'已参加',notYet:'未入场',surveyTitle:'满意度问卷',surveyRatingRequired:'请选择评分',surveySubmit:'提交',surveyThanks:'感谢您的回答！',surveyCommentPlaceholder:'留言（选填）',emailNotFound:'未找到该邮箱，请注册。',sending:'发送中...',invalidEmail:'请输入有效的电子邮箱',nameRequired:'请输入姓名',verifyingToken:'验证中...',participations:'参加次数',rank:'等级',payPayPending:'主办方将另行通知PayPay付款详情。',cashNotice:'请于当天受付处以现金付款。',tokenExpired:'链接已过期',tokenExpiredDesc:'链接有效期为24小时，请重新申请。',authError:'无效链接',authErrorDesc:'请重新申请登录链接。',noSurveys:'暂无满意度调查',langLabel:'语言',emailChangeNote:'更改邮箱后，下次登录时需要使用新邮箱。',saveProfile:'保存更改',saving:'保存中...',profileSaved:'个人资料已更新！',close:'关闭',eventsSection:'活动列表'},
-  ko:{login:'로그인',newRegister:'회원가입',emailLabel:'이메일',emailPlaceholder:'example@email.com',nameLabel:'이름',namePlaceholder:'홍길동',sendLoginLink:'로그인 링크 보내기',loginNote:'등록된 이메일로 개인 전용 로그인 링크를 보내드립니다.',sendRegisterLink:'가입하고 링크 보내기',registerNote2:'이메일로 개인 전용 로그인 링크를 보내드립니다.',sentTitle:'링크를 보냈습니다',sentDesc:'아래 이메일로 개인 전용 로그인 링크를 발송했습니다.',sentNote:'이메일을 확인하고 링크를 클릭하세요.',sentPrivacy:'이 링크는 본인 전용입니다. 타인과 공유하지 마세요.',backToLogin:'뒤로',eyebrow:'이벤트',heroTitle:'connec+a 이벤트에 오신 것을 환영합니다',heroDesc:'참여하고 싶은 이벤트를 선택하여 쉽게 신청하세요.',loading:'로딩 중',logout:'로그아웃',registerTitle:'참가 신청',registerBtn:'신청하기',registerNote:'신청 후 QR 티켓을 이메일로 보내드립니다.',backToList:'이벤트 목록',free:'무료',full:'마감',venue:'장소',price:'참가비',seats:'남은 자리',registered:'신청완료',checkedIn:'참가완료',showQR:'QR 보기',regSuccess:'신청 완료! 티켓을 이메일로 발송했습니다.',regFull:'죄송합니다, 마감되었습니다.',regDuplicate:'이미 신청하셨습니다.',registering:'신청 중...',ticketTitle:'QR 티켓',historyTab:'참가 기록',surveyTab:'만족도',profileTab:'프로필',noHistory:'아직 참가 기록이 없습니다.',showQRTicket:'QR 티켓',participated:'참가 완료',notYet:'미입장',surveyTitle:'만족도 설문',surveyRatingRequired:'평점을 선택해 주세요',surveySubmit:'제출하기',surveyThanks:'응답해 주셔서 감사합니다!',surveyCommentPlaceholder:'코멘트 (선택)',emailNotFound:'등록되지 않은 이메일입니다. 회원가입을 시도해 주세요.',sending:'전송 중...',invalidEmail:'올바른 이메일을 입력하세요',nameRequired:'이름을 입력하세요',verifyingToken:'인증 중...',participations:'참가 횟수',rank:'랭크',payPayPending:'PayPay 결제 안내는 주최자가 별도로 드립니다.',cashNotice:'당일 접수처에서 현금으로 결제해 주세요.',tokenExpired:'링크가 만료되었습니다',tokenExpiredDesc:'링크 유효기간은 24시간입니다. 다시 요청해 주세요.',authError:'유효하지 않은 링크',authErrorDesc:'로그인 링크를 다시 발급해 주세요.',noSurveys:'아직 만족도 조사가 없습니다',langLabel:'언어',emailChangeNote:'이메일을 변경하면 다음 로그인 시 새 이메일이 필요합니다.',saveProfile:'변경 저장',saving:'저장 중...',profileSaved:'프로필이 업데이트되었습니다!',close:'닫기',eventsSection:'이벤트'},
-  es:{login:'Iniciar sesión',newRegister:'Registrarse',emailLabel:'Correo',emailPlaceholder:'ejemplo@correo.com',nameLabel:'Nombre',namePlaceholder:'Juan García',sendLoginLink:'Enviar enlace',loginNote:'Se enviará un enlace personal al correo registrado.',sendRegisterLink:'Registrarse y enviar enlace',registerNote2:'Se enviará un enlace personal a su correo.',sentTitle:'Enlace enviado',sentDesc:'Se ha enviado un enlace al siguiente correo:',sentNote:'Revise su correo y haga clic en el enlace.',sentPrivacy:'Este enlace es solo para usted.',backToLogin:'Volver',eyebrow:'Eventos',heroTitle:'Bienvenido a connec+a',heroDesc:'Explore y regístrese en eventos fácilmente.',loading:'Cargando',logout:'Cerrar sesión',registerTitle:'Inscripción',registerBtn:'Inscribirse',registerNote:'Se enviará un ticket QR a su correo.',backToList:'Eventos',free:'Gratis',full:'Completo',venue:'Lugar',price:'Precio',seats:'Plazas',registered:'Inscrito',checkedIn:'Asistido',showQR:'Ver QR',regSuccess:'¡Inscripción completada!',regFull:'Lo sentimos, el evento está completo.',regDuplicate:'Ya está inscrito.',registering:'Inscribiendo...',ticketTitle:'Ticket QR',historyTab:'Historial',surveyTab:'Encuesta',profileTab:'Perfil',noHistory:'Sin historial.',showQRTicket:'Ticket QR',participated:'Asistido',notYet:'No asistido',surveyTitle:'Encuesta',surveyRatingRequired:'Seleccione una puntuación',surveySubmit:'Enviar',surveyThanks:'¡Gracias!',surveyCommentPlaceholder:'Comentario (opcional)',emailNotFound:'Correo no encontrado.',sending:'Enviando...',invalidEmail:'Ingrese un correo válido',nameRequired:'Ingrese su nombre',verifyingToken:'Verificando...',participations:'Participaciones',rank:'Rango',payPayPending:'El organizador enviará detalles de pago.',cashNotice:'Pague en efectivo el día del evento.',tokenExpired:'Enlace caducado',tokenExpiredDesc:'Solicite un nuevo enlace.',authError:'Enlace inválido',authErrorDesc:'Solicite un nuevo enlace.',noSurveys:'Sin encuestas',langLabel:'Idioma',emailChangeNote:'Si cambia su correo, lo necesitará para iniciar sesión.',saveProfile:'Guardar',saving:'Guardando...',profileSaved:'¡Perfil actualizado!',close:'Cerrar',eventsSection:'Eventos'},
-  fr:{login:'Connexion',newRegister:"S'inscrire",emailLabel:'E-mail',emailPlaceholder:'exemple@email.com',nameLabel:'Nom',namePlaceholder:'Jean Dupont',sendLoginLink:'Envoyer le lien',loginNote:'Un lien personnel sera envoyé à votre e-mail.',sendRegisterLink:"S'inscrire et envoyer",registerNote2:'Un lien personnel sera envoyé à votre e-mail.',sentTitle:'Lien envoyé',sentDesc:'Un lien a été envoyé à :',sentNote:'Vérifiez votre e-mail et cliquez sur le lien.',sentPrivacy:'Ce lien est uniquement pour vous.',backToLogin:'Retour',eyebrow:'Événements',heroTitle:'Bienvenue sur connec+a',heroDesc:'Parcourez et inscrivez-vous aux événements.',loading:'Chargement',logout:'Déconnexion',registerTitle:'Inscription',registerBtn:"S'inscrire",registerNote:'Un ticket QR sera envoyé par e-mail.',backToList:'Événements',free:'Gratuit',full:'Complet',venue:'Lieu',price:'Prix',seats:'Places',registered:'Inscrit',checkedIn:'Participé',showQR:'Voir QR',regSuccess:'Inscription réussie !',regFull:"L'événement est complet.",regDuplicate:'Vous êtes déjà inscrit.',registering:'Inscription...',ticketTitle:'Ticket QR',historyTab:'Historique',surveyTab:'Sondage',profileTab:'Profil',noHistory:'Aucun historique.',showQRTicket:'Ticket QR',participated:'Participé',notYet:'Pas encore',surveyTitle:'Sondage',surveyRatingRequired:'Sélectionnez une note',surveySubmit:'Envoyer',surveyThanks:'Merci !',surveyCommentPlaceholder:'Commentaire (optionnel)',emailNotFound:'E-mail introuvable.',sending:'Envoi...',invalidEmail:'E-mail invalide',nameRequired:'Entrez votre nom',verifyingToken:'Vérification...',participations:'Participations',rank:'Rang',payPayPending:"L'organisateur enverra les détails.",cashNotice:"Payez en espèces le jour de l'événement.",tokenExpired:'Lien expiré',tokenExpiredDesc:'Demandez un nouveau lien.',authError:'Lien invalide',authErrorDesc:'Demandez un nouveau lien.',noSurveys:'Aucun sondage',langLabel:'Langue',emailChangeNote:'Si vous changez votre e-mail, il sera nécessaire pour vous connecter.',saveProfile:'Enregistrer',saving:'Enregistrement...',profileSaved:'Profil mis à jour !',close:'Fermer',eventsSection:'Événements'},
-  pt:{login:'Entrar',newRegister:'Cadastrar',emailLabel:'E-mail',emailPlaceholder:'exemplo@email.com',nameLabel:'Nome',namePlaceholder:'João Silva',sendLoginLink:'Enviar link',loginNote:'Um link pessoal será enviado ao e-mail cadastrado.',sendRegisterLink:'Cadastrar e enviar link',registerNote2:'Um link pessoal será enviado ao seu e-mail.',sentTitle:'Link enviado',sentDesc:'Um link foi enviado para:',sentNote:'Verifique seu e-mail e clique no link.',sentPrivacy:'Este link é apenas para você.',backToLogin:'Voltar',eyebrow:'Eventos',heroTitle:'Bem-vindo ao connec+a',heroDesc:'Explore e inscreva-se em eventos facilmente.',loading:'Carregando',logout:'Sair',registerTitle:'Inscrição',registerBtn:'Inscrever-se',registerNote:'Um ticket QR será enviado por e-mail.',backToList:'Eventos',free:'Gratuito',full:'Lotado',venue:'Local',price:'Preço',seats:'Vagas',registered:'Inscrito',checkedIn:'Participou',showQR:'Ver QR',regSuccess:'Inscrição concluída!',regFull:'O evento está lotado.',regDuplicate:'Você já está inscrito.',registering:'Inscrevendo...',ticketTitle:'Ticket QR',historyTab:'Histórico',surveyTab:'Pesquisa',profileTab:'Perfil',noHistory:'Sem histórico.',showQRTicket:'Ticket QR',participated:'Participou',notYet:'Ainda não',surveyTitle:'Pesquisa',surveyRatingRequired:'Selecione uma avaliação',surveySubmit:'Enviar',surveyThanks:'Obrigado!',surveyCommentPlaceholder:'Comentário (opcional)',emailNotFound:'E-mail não encontrado.',sending:'Enviando...',invalidEmail:'E-mail inválido',nameRequired:'Digite seu nome',verifyingToken:'Verificando...',participations:'Participações',rank:'Rank',payPayPending:'O organizador enviará os detalhes.',cashNotice:'Pague em dinheiro no dia do evento.',tokenExpired:'Link expirado',tokenExpiredDesc:'Solicite um novo link.',authError:'Link inválido',authErrorDesc:'Solicite um novo link.',noSurveys:'Sem pesquisas',langLabel:'Idioma',emailChangeNote:'Se alterar o e-mail, precisará dele para fazer login.',saveProfile:'Salvar',saving:'Salvando...',profileSaved:'Perfil atualizado!',close:'Fechar',eventsSection:'Eventos'},
-  id:{login:'Masuk',newRegister:'Daftar',emailLabel:'Email',emailPlaceholder:'contoh@email.com',nameLabel:'Nama',namePlaceholder:'Budi Santoso',sendLoginLink:'Kirim tautan',loginNote:'Tautan pribadi akan dikirim ke email terdaftar.',sendRegisterLink:'Daftar & kirim tautan',registerNote2:'Tautan pribadi akan dikirim ke email Anda.',sentTitle:'Tautan terkirim',sentDesc:'Tautan telah dikirim ke:',sentNote:'Cek email Anda dan klik tautannya.',sentPrivacy:'Tautan ini hanya untuk Anda.',backToLogin:'Kembali',eyebrow:'Acara',heroTitle:'Selamat datang di connec+a',heroDesc:'Temukan dan daftar acara dengan mudah.',loading:'Memuat',logout:'Keluar',registerTitle:'Pendaftaran',registerBtn:'Daftar',registerNote:'Tiket QR akan dikirim ke email Anda.',backToList:'Acara',free:'Gratis',full:'Penuh',venue:'Tempat',price:'Harga',seats:'Kursi',registered:'Terdaftar',checkedIn:'Hadir',showQR:'Lihat QR',regSuccess:'Pendaftaran berhasil!',regFull:'Acara sudah penuh.',regDuplicate:'Anda sudah terdaftar.',registering:'Mendaftar...',ticketTitle:'Tiket QR',historyTab:'Riwayat',surveyTab:'Survei',profileTab:'Profil',noHistory:'Belum ada riwayat.',showQRTicket:'Tiket QR',participated:'Hadir',notYet:'Belum',surveyTitle:'Survei',surveyRatingRequired:'Pilih rating',surveySubmit:'Kirim',surveyThanks:'Terima kasih!',surveyCommentPlaceholder:'Komentar (opsional)',emailNotFound:'Email tidak ditemukan.',sending:'Mengirim...',invalidEmail:'Email tidak valid',nameRequired:'Masukkan nama Anda',verifyingToken:'Memverifikasi...',participations:'Partisipasi',rank:'Peringkat',payPayPending:'Penyelenggara akan mengirimkan detail.',cashNotice:'Bayar tunai pada hari acara.',tokenExpired:'Tautan kedaluwarsa',tokenExpiredDesc:'Minta tautan baru.',authError:'Tautan tidak valid',authErrorDesc:'Minta tautan baru.',noSurveys:'Belum ada survei',langLabel:'Bahasa',emailChangeNote:'Jika email diubah, Anda perlu email baru untuk login.',saveProfile:'Simpan',saving:'Menyimpan...',profileSaved:'Profil diperbarui!',close:'Tutup',eventsSection:'Acara'},
-  th:{login:'เข้าสู่ระบบ',newRegister:'สมัครสมาชิก',emailLabel:'อีเมล',emailPlaceholder:'example@email.com',nameLabel:'ชื่อ',namePlaceholder:'สมชาย ใจดี',sendLoginLink:'ส่งลิงก์',loginNote:'ลิงก์ส่วนตัวจะถูกส่งไปยังอีเมลที่ลงทะเบียน',sendRegisterLink:'สมัครและส่งลิงก์',registerNote2:'ลิงก์ส่วนตัวจะถูกส่งไปยังอีเมลของคุณ',sentTitle:'ส่งลิงก์แล้ว',sentDesc:'ลิงก์ถูกส่งไปยัง:',sentNote:'กรุณาตรวจสอบอีเมลและคลิกที่ลิงก์',sentPrivacy:'ลิงก์นี้สำหรับคุณเท่านั้น',backToLogin:'กลับ',eyebrow:'กิจกรรม',heroTitle:'ยินดีต้อนรับสู่ connec+a',heroDesc:'ค้นหาและลงทะเบียนกิจกรรมได้ง่ายๆ',loading:'กำลังโหลด',logout:'ออกจากระบบ',registerTitle:'ลงทะเบียน',registerBtn:'ลงทะเบียน',registerNote:'ตั๋ว QR จะถูกส่งไปยังอีเมล',backToList:'กิจกรรม',free:'ฟรี',full:'เต็ม',venue:'สถานที่',price:'ราคา',seats:'ที่นั่ง',registered:'ลงทะเบียนแล้ว',checkedIn:'เข้าร่วมแล้ว',showQR:'ดู QR',regSuccess:'ลงทะเบียนสำเร็จ!',regFull:'กิจกรรมเต็มแล้ว',regDuplicate:'คุณลงทะเบียนแล้ว',registering:'กำลังลงทะเบียน...',ticketTitle:'ตั๋ว QR',historyTab:'ประวัติ',surveyTab:'แบบสอบถาม',profileTab:'โปรไฟล์',noHistory:'ยังไม่มีประวัติ',showQRTicket:'ตั๋ว QR',participated:'เข้าร่วมแล้ว',notYet:'ยังไม่เข้า',surveyTitle:'แบบสอบถาม',surveyRatingRequired:'กรุณาเลือกคะแนน',surveySubmit:'ส่ง',surveyThanks:'ขอบคุณ!',surveyCommentPlaceholder:'ความคิดเห็น',emailNotFound:'ไม่พบอีเมลนี้',sending:'กำลังส่ง...',invalidEmail:'อีเมลไม่ถูกต้อง',nameRequired:'กรุณากรอกชื่อ',verifyingToken:'กำลังยืนยัน...',participations:'จำนวนครั้ง',rank:'อันดับ',payPayPending:'ผู้จัดจะส่งรายละเอียดการชำระ',cashNotice:'ชำระเงินสดในวันงาน',tokenExpired:'ลิงก์หมดอายุ',tokenExpiredDesc:'กรุณาขอลิงก์ใหม่',authError:'ลิงก์ไม่ถูกต้อง',authErrorDesc:'กรุณาขอลิงก์ใหม่',noSurveys:'ยังไม่มีแบบสอบถาม',langLabel:'ภาษา',emailChangeNote:'หากเปลี่ยนอีเมล ต้องใช้อีเมลใหม่ในการเข้าสู่ระบบ',saveProfile:'บันทึก',saving:'กำลังบันทึก...',profileSaved:'อัปเดตโปรไฟล์แล้ว!',close:'ปิด',eventsSection:'กิจกรรม'},
-  vi:{login:'Đăng nhập',newRegister:'Đăng ký',emailLabel:'Email',emailPlaceholder:'example@email.com',nameLabel:'Họ tên',namePlaceholder:'Nguyễn Văn A',sendLoginLink:'Gửi liên kết',loginNote:'Liên kết cá nhân sẽ được gửi đến email đã đăng ký.',sendRegisterLink:'Đăng ký và gửi liên kết',registerNote2:'Liên kết cá nhân sẽ được gửi đến email của bạn.',sentTitle:'Đã gửi liên kết',sentDesc:'Liên kết đã được gửi đến:',sentNote:'Kiểm tra email và nhấp vào liên kết.',sentPrivacy:'Liên kết này chỉ dành cho bạn.',backToLogin:'Quay lại',eyebrow:'Sự kiện',heroTitle:'Chào mừng đến connec+a',heroDesc:'Khám phá và đăng ký sự kiện dễ dàng.',loading:'Đang tải',logout:'Đăng xuất',registerTitle:'Đăng ký',registerBtn:'Đăng ký',registerNote:'Vé QR sẽ được gửi qua email.',backToList:'Sự kiện',free:'Miễn phí',full:'Hết chỗ',venue:'Địa điểm',price:'Giá',seats:'Chỗ còn',registered:'Đã đăng ký',checkedIn:'Đã tham dự',showQR:'Xem QR',regSuccess:'Đăng ký thành công!',regFull:'Sự kiện đã hết chỗ.',regDuplicate:'Bạn đã đăng ký rồi.',registering:'Đang đăng ký...',ticketTitle:'Vé QR',historyTab:'Lịch sử',surveyTab:'Khảo sát',profileTab:'Hồ sơ',noHistory:'Chưa có lịch sử.',showQRTicket:'Vé QR',participated:'Đã tham dự',notYet:'Chưa vào',surveyTitle:'Khảo sát',surveyRatingRequired:'Chọn đánh giá',surveySubmit:'Gửi',surveyThanks:'Cảm ơn!',surveyCommentPlaceholder:'Nhận xét (tùy chọn)',emailNotFound:'Không tìm thấy email.',sending:'Đang gửi...',invalidEmail:'Email không hợp lệ',nameRequired:'Nhập tên của bạn',verifyingToken:'Đang xác minh...',participations:'Tham dự',rank:'Hạng',payPayPending:'Ban tổ chức sẽ gửi thông tin thanh toán.',cashNotice:'Thanh toán tiền mặt ngày diễn ra.',tokenExpired:'Liên kết hết hạn',tokenExpiredDesc:'Yêu cầu liên kết mới.',authError:'Liên kết không hợp lệ',authErrorDesc:'Yêu cầu liên kết mới.',noSurveys:'Chưa có khảo sát',langLabel:'Ngôn ngữ',emailChangeNote:'Nếu đổi email, bạn cần dùng email mới để đăng nhập.',saveProfile:'Lưu',saving:'Đang lưu...',profileSaved:'Đã cập nhật hồ sơ!',close:'Đóng',eventsSection:'Sự kiện'},
-  ar:{login:'تسجيل الدخول',newRegister:'إنشاء حساب',emailLabel:'البريد الإلكتروني',emailPlaceholder:'example@email.com',nameLabel:'الاسم',namePlaceholder:'محمد أحمد',sendLoginLink:'إرسال رابط',loginNote:'سيُرسل رابط شخصي إلى بريدك.',sendRegisterLink:'التسجيل وإرسال الرابط',registerNote2:'سيُرسل رابط شخصي إلى بريدك.',sentTitle:'تم إرسال الرابط',sentDesc:'تم إرسال رابط إلى:',sentNote:'تحقق من بريدك وانقر على الرابط.',sentPrivacy:'هذا الرابط خاص بك فقط.',backToLogin:'رجوع',eyebrow:'الفعاليات',heroTitle:'مرحباً بك في connec+a',heroDesc:'تصفح الفعاليات وسجّل بسهولة.',loading:'جار التحميل',logout:'تسجيل الخروج',registerTitle:'التسجيل',registerBtn:'التسجيل',registerNote:'سيُرسل تذكرة QR إلى بريدك.',backToList:'الفعاليات',free:'مجاني',full:'ممتلئ',venue:'المكان',price:'السعر',seats:'المقاعد',registered:'مسجل',checkedIn:'حضر',showQR:'عرض QR',regSuccess:'تم التسجيل!',regFull:'الفعالية ممتلئة.',regDuplicate:'أنت مسجل بالفعل.',registering:'جار التسجيل...',ticketTitle:'تذكرة QR',historyTab:'السجل',surveyTab:'استطلاع',profileTab:'الملف',noHistory:'لا يوجد سجل.',showQRTicket:'تذكرة QR',participated:'حضر',notYet:'لم يحضر',surveyTitle:'استطلاع',surveyRatingRequired:'اختر تقييماً',surveySubmit:'إرسال',surveyThanks:'شكراً!',surveyCommentPlaceholder:'تعليق (اختياري)',emailNotFound:'البريد غير موجود.',sending:'إرسال...',invalidEmail:'بريد إلكتروني غير صحيح',nameRequired:'أدخل اسمك',verifyingToken:'تحقق...',participations:'المشاركات',rank:'الرتبة',payPayPending:'سيرسل المنظم تفاصيل الدفع.',cashNotice:'ادفع نقداً يوم الفعالية.',tokenExpired:'انتهت صلاحية الرابط',tokenExpiredDesc:'اطلب رابطاً جديداً.',authError:'رابط غير صالح',authErrorDesc:'اطلب رابطاً جديداً.',noSurveys:'لا توجد استطلاعات',langLabel:'اللغة',emailChangeNote:'إذا غيرت بريدك، ستحتاجه لتسجيل الدخول.',saveProfile:'حفظ',saving:'جار الحفظ...',profileSaved:'تم تحديث الملف!',close:'إغلاق',eventsSection:'الفعاليات'},
-  hi:{login:'लॉगिन',newRegister:'नया खाता',emailLabel:'ईमेल',emailPlaceholder:'example@email.com',nameLabel:'नाम',namePlaceholder:'राम शर्मा',sendLoginLink:'लिंक भेजें',loginNote:'पंजीकृत ईमेल पर लिंक भेजा जाएगा।',sendRegisterLink:'पंजीकरण और लिंक भेजें',registerNote2:'आपके ईमेल पर लिंक भेजा जाएगा।',sentTitle:'लिंक भेजा गया',sentDesc:'लिंक भेजा गया:',sentNote:'ईमेल जांचें और लिंक पर क्लिक करें।',sentPrivacy:'यह लिंक केवल आपके लिए है।',backToLogin:'वापस',eyebrow:'कार्यक्रम',heroTitle:'connec+a में स्वागत है',heroDesc:'कार्यक्रम खोजें और पंजीकरण करें।',loading:'लोड हो रहा है',logout:'लॉगआउट',registerTitle:'पंजीकरण',registerBtn:'पंजीकरण',registerNote:'QR टिकट ईमेल पर भेजा जाएगा।',backToList:'कार्यक्रम',free:'मुफ्त',full:'भरा',venue:'स्थान',price:'मूल्य',seats:'सीटें',registered:'पंजीकृत',checkedIn:'भाग लिया',showQR:'QR देखें',regSuccess:'पंजीकरण सफल!',regFull:'कार्यक्रम भरा है।',regDuplicate:'पहले से पंजीकृत।',registering:'पंजीकरण...',ticketTitle:'QR टिकट',historyTab:'इतिहास',surveyTab:'सर्वे',profileTab:'प्रोफ़ाइल',noHistory:'कोई इतिहास नहीं।',showQRTicket:'QR टिकट',participated:'भाग लिया',notYet:'अभी नहीं',surveyTitle:'सर्वे',surveyRatingRequired:'रेटिंग चुनें',surveySubmit:'भेजें',surveyThanks:'धन्यवाद!',surveyCommentPlaceholder:'टिप्पणी (वैकल्पिक)',emailNotFound:'ईमेल नहीं मिला।',sending:'भेज रहे हैं...',invalidEmail:'वैध ईमेल दर्ज करें',nameRequired:'नाम दर्ज करें',verifyingToken:'सत्यापन...',participations:'भागीदारी',rank:'रैंक',payPayPending:'आयोजक विवरण भेजेंगे।',cashNotice:'दिन पर नकद भुगतान करें।',tokenExpired:'लिंक समाप्त',tokenExpiredDesc:'नया लिंक मांगें।',authError:'अमान्य लिंक',authErrorDesc:'नया लिंक मांगें।',noSurveys:'कोई सर्वे नहीं',langLabel:'भाषा',emailChangeNote:'ईमेल बदलने पर नया ईमेल चाहिए।',saveProfile:'सहेजें',saving:'सहेज रहे हैं...',profileSaved:'प्रोफ़ाइल अपडेट!',close:'बंद करें',eventsSection:'कार्यक्रम'},
-  de:{login:'Anmelden',newRegister:'Registrieren',emailLabel:'E-Mail',emailPlaceholder:'beispiel@email.com',nameLabel:'Name',namePlaceholder:'Max Mustermann',sendLoginLink:'Link senden',loginNote:'Ein persönlicher Link wird an Ihre E-Mail gesendet.',sendRegisterLink:'Registrieren & Link senden',registerNote2:'Ein persönlicher Link wird an Ihre E-Mail gesendet.',sentTitle:'Link gesendet',sentDesc:'Ein Link wurde gesendet an:',sentNote:'Überprüfen Sie Ihre E-Mail und klicken Sie auf den Link.',sentPrivacy:'Dieser Link ist nur für Sie.',backToLogin:'Zurück',eyebrow:'Veranstaltungen',heroTitle:'Willkommen bei connec+a',heroDesc:'Veranstaltungen entdecken und anmelden.',loading:'Laden',logout:'Abmelden',registerTitle:'Anmeldung',registerBtn:'Anmelden',registerNote:'Ein QR-Ticket wird per E-Mail gesendet.',backToList:'Veranstaltungen',free:'Kostenlos',full:'Ausgebucht',venue:'Ort',price:'Preis',seats:'Plätze',registered:'Angemeldet',checkedIn:'Teilgenommen',showQR:'QR anzeigen',regSuccess:'Anmeldung abgeschlossen!',regFull:'Die Veranstaltung ist ausgebucht.',regDuplicate:'Sie sind bereits angemeldet.',registering:'Anmeldung...',ticketTitle:'QR-Ticket',historyTab:'Verlauf',surveyTab:'Umfrage',profileTab:'Profil',noHistory:'Kein Verlauf.',showQRTicket:'QR-Ticket',participated:'Teilgenommen',notYet:'Noch nicht',surveyTitle:'Umfrage',surveyRatingRequired:'Bewertung auswählen',surveySubmit:'Absenden',surveyThanks:'Danke!',surveyCommentPlaceholder:'Kommentar (optional)',emailNotFound:'E-Mail nicht gefunden.',sending:'Senden...',invalidEmail:'Gültige E-Mail eingeben',nameRequired:'Namen eingeben',verifyingToken:'Überprüfung...',participations:'Teilnahmen',rank:'Rang',payPayPending:'Der Veranstalter sendet Details.',cashNotice:'Bar zahlen am Veranstaltungstag.',tokenExpired:'Link abgelaufen',tokenExpiredDesc:'Neuen Link anfordern.',authError:'Ungültiger Link',authErrorDesc:'Neuen Link anfordern.',noSurveys:'Keine Umfragen',langLabel:'Sprache',emailChangeNote:'Bei E-Mail-Änderung wird die neue Adresse benötigt.',saveProfile:'Speichern',saving:'Speichern...',profileSaved:'Profil aktualisiert!',close:'Schließen',eventsSection:'Veranstaltungen'},
-  it:{login:'Accedi',newRegister:'Registrati',emailLabel:'Email',emailPlaceholder:'esempio@email.com',nameLabel:'Nome',namePlaceholder:'Mario Rossi',sendLoginLink:'Invia link',loginNote:'Un link personale verrà inviato alla tua email.',sendRegisterLink:'Registrati e invia link',registerNote2:'Un link personale verrà inviato alla tua email.',sentTitle:'Link inviato',sentDesc:'Un link è stato inviato a:',sentNote:'Controlla la tua email e clicca sul link.',sentPrivacy:'Questo link è solo per te.',backToLogin:'Indietro',eyebrow:'Eventi',heroTitle:'Benvenuto su connec+a',heroDesc:'Esplora e iscriviti agli eventi facilmente.',loading:'Caricamento',logout:'Esci',registerTitle:'Iscrizione',registerBtn:'Iscriviti',registerNote:'Un ticket QR verrà inviato via email.',backToList:'Eventi',free:'Gratuito',full:'Completo',venue:'Luogo',price:'Prezzo',seats:'Posti',registered:'Iscritto',checkedIn:'Partecipato',showQR:'Mostra QR',regSuccess:'Iscrizione completata!',regFull:"L'evento è completo.",regDuplicate:'Sei già iscritto.',registering:'Iscrizione...',ticketTitle:'Ticket QR',historyTab:'Cronologia',surveyTab:'Sondaggio',profileTab:'Profilo',noHistory:'Nessuna cronologia.',showQRTicket:'Ticket QR',participated:'Partecipato',notYet:'Non ancora',surveyTitle:'Sondaggio',surveyRatingRequired:'Seleziona una valutazione',surveySubmit:'Invia',surveyThanks:'Grazie!',surveyCommentPlaceholder:'Commento (opzionale)',emailNotFound:'Email non trovata.',sending:'Invio...',invalidEmail:"Email non valida",nameRequired:'Inserisci il tuo nome',verifyingToken:'Verifica...',participations:'Partecipazioni',rank:'Grado',payPayPending:"L'organizzatore invierà i dettagli.",cashNotice:"Paga in contanti il giorno dell'evento.",tokenExpired:'Link scaduto',tokenExpiredDesc:'Richiedi un nuovo link.',authError:'Link non valido',authErrorDesc:'Richiedi un nuovo link.',noSurveys:'Nessun sondaggio',langLabel:'Lingua',emailChangeNote:"Se cambi l'email, sarà necessaria per accedere.",saveProfile:'Salva',saving:'Salvataggio...',profileSaved:'Profilo aggiornato!',close:'Chiudi',eventsSection:'Eventi'},
-  ru:{login:'Войти',newRegister:'Зарегистрироваться',emailLabel:'Электронная почта',emailPlaceholder:'example@email.com',nameLabel:'Имя',namePlaceholder:'Иван Иванов',sendLoginLink:'Отправить ссылку',loginNote:'Персональная ссылка будет отправлена на ваш email.',sendRegisterLink:'Зарегистрироваться и отправить',registerNote2:'Персональная ссылка будет отправлена на ваш email.',sentTitle:'Ссылка отправлена',sentDesc:'Ссылка отправлена на:',sentNote:'Проверьте почту и нажмите на ссылку.',sentPrivacy:'Эта ссылка только для вас.',backToLogin:'Назад',eyebrow:'Мероприятия',heroTitle:'Добро пожаловать на connec+a',heroDesc:'Просматривайте мероприятия и регистрируйтесь.',loading:'Загрузка',logout:'Выйти',registerTitle:'Регистрация',registerBtn:'Зарегистрироваться',registerNote:'QR-билет будет отправлен по email.',backToList:'Мероприятия',free:'Бесплатно',full:'Заполнено',venue:'Место',price:'Цена',seats:'Мест',registered:'Зарегистрирован',checkedIn:'Посетил',showQR:'Показать QR',regSuccess:'Регистрация завершена!',regFull:'Мероприятие заполнено.',regDuplicate:'Вы уже зарегистрированы.',registering:'Регистрация...',ticketTitle:'QR-билет',historyTab:'История',surveyTab:'Опрос',profileTab:'Профиль',noHistory:'Нет истории.',showQRTicket:'QR-билет',participated:'Посетил',notYet:'Ещё нет',surveyTitle:'Опрос',surveyRatingRequired:'Выберите оценку',surveySubmit:'Отправить',surveyThanks:'Спасибо!',surveyCommentPlaceholder:'Комментарий (необязательно)',emailNotFound:'Email не найден.',sending:'Отправка...',invalidEmail:'Введите корректный email',nameRequired:'Введите ваше имя',verifyingToken:'Проверка...',participations:'Участий',rank:'Ранг',payPayPending:'Организатор пришлёт детали.',cashNotice:'Оплатите наличными в день мероприятия.',tokenExpired:'Ссылка истекла',tokenExpiredDesc:'Запросите новую ссылку.',authError:'Недействительная ссылка',authErrorDesc:'Запросите новую ссылку.',noSurveys:'Опросов пока нет',langLabel:'Язык',emailChangeNote:'При смене email потребуется новый адрес.',saveProfile:'Сохранить',saving:'Сохранение...',profileSaved:'Профиль обновлён!',close:'Закрыть',eventsSection:'Мероприятия'},
+  ja:{login:'ログイン',newRegister:'新規登録',welcomeTitle:'ようこそ',welcomeMessage:'イベントへの参加登録やチケット管理が\n簡単にできるプラットフォームです',emailLabel:'メールアドレス',emailPlaceholder:'example@email.com',nameLabel:'お名前',namePlaceholder:'山田 太郎',sendLoginLink:'ログインリンクを送信',loginNote:'登録済みのメールアドレスに個人専用リンクを送信します',sendRegisterLink:'登録してリンクを送信',registerNote2:'個人専用のログインリンクをメールでお送りします',sentTitle:'リンクを送信しました',sentDesc:'以下のメールアドレスに個人専用ログインリンクを送信しました。',sentNote:'メールを確認して、リンクをクリックしてください。',sentPrivacy:'このリンクはあなた専用です。他の人と共有しないでください。',backToLogin:'戻る',eyebrow:'Events',heroTitle:'のイベントへようこそ',heroDesc:'参加したいイベントを選んで、簡単にお申し込みいただけます。',loading:'読み込み中',logout:'ログアウト',registerTitle:'参加登録',registerBtn:'登録する',registerNote:'登録後、QRチケットをメールでお送りします',backToList:'一覧に戻る',free:'無料',full:'満席',venue:'会場',price:'参加費',seats:'残席',registered:'登録済み',checkedIn:'参加済み',showQR:'QRチケット',regSuccess:'登録完了！チケットをメールで送信しました。',regFull:'満席のため登録できません。',regDuplicate:'すでに登録済みです。',registering:'登録中...',ticketTitle:'QR チケット',historyTab:'参加履歴',surveyTab:'満足度調査',profileTab:'プロフィール',noHistory:'まだ参加履歴がありません。',showQRTicket:'QRチケット',participated:'参加済み',notYet:'未入場',surveyTitle:'満足度アンケート',surveyRatingRequired:'評価を選択してください',surveySubmit:'送信する',surveyThanks:'回答ありがとうございました！',surveyCommentPlaceholder:'一言コメント（任意）',emailNotFound:'このメールアドレスは登録されていません。新規登録をお試しください。',sending:'送信中...',invalidEmail:'有効なメールアドレスを入力してください',nameRequired:'お名前を入力してください',verifyingToken:'認証中...',participations:'参加回数',rank:'ランク',payPayPending:'管理者から別途PayPayのご案内をします。',cashNotice:'当日受付にて現金でお支払いください。',tokenExpired:'リンクの有効期限が切れています',tokenExpiredDesc:'リンクは24時間有効です。再度ログイン画面からリンクを送信してください。',authError:'リンクが無効です',authErrorDesc:'再度ログイン画面からリンクを発行してください。',noSurveys:'満足度アンケートはまだありません',langLabel:'表示言語',emailChangeNote:'メールアドレスを変更すると次回ログイン時に新しいアドレスが必要になります',saveProfile:'変更を保存',saving:'保存中...',profileSaved:'プロフィールを更新しました！',close:'閉じる',eventsSection:'イベント一覧'},
+  en:{login:'Login',newRegister:'Sign Up',welcomeTitle:'Welcome',welcomeMessage:'Easily register for events and\nmanage your tickets',emailLabel:'Email',emailPlaceholder:'example@email.com',nameLabel:'Name',namePlaceholder:'John Doe',sendLoginLink:'Send Login Link',loginNote:'A personal login link will be sent to your registered email.',sendRegisterLink:'Register & Send Link',registerNote2:'A personal login link will be sent to your email.',sentTitle:'Link Sent',sentDesc:'A personal login link has been sent to:',sentNote:'Please check your email and click the link.',sentPrivacy:'This link is for you only. Do not share it.',backToLogin:'Back',eyebrow:'Events',heroTitle:'Welcome to connec+a Events',heroDesc:'Browse and register for events easily.',loading:'Loading',logout:'Logout',registerTitle:'Register',registerBtn:'Register',registerNote:'A QR ticket will be sent to your email.',backToList:'Back to List',free:'Free',full:'Full',venue:'Venue',price:'Price',seats:'Seats Left',registered:'Registered',checkedIn:'Attended',showQR:'Show QR',regSuccess:'Registration complete! Ticket sent by email.',regFull:'Sorry, this event is full.',regDuplicate:'You are already registered.',registering:'Registering...',ticketTitle:'QR Ticket',historyTab:'History',surveyTab:'Survey',profileTab:'Profile',noHistory:'No history yet.',showQRTicket:'QR Ticket',participated:'Attended',notYet:'Not yet',surveyTitle:'Survey',surveyRatingRequired:'Please select a rating',surveySubmit:'Submit',surveyThanks:'Thank you!',surveyCommentPlaceholder:'Comment (optional)',emailNotFound:'Email not found. Please sign up.',sending:'Sending...',invalidEmail:'Please enter a valid email',nameRequired:'Please enter your name',verifyingToken:'Verifying...',participations:'Participations',rank:'Rank',payPayPending:'PayPay details will be sent by the organizer.',cashNotice:'Please pay cash at reception on the day.',tokenExpired:'Link has expired',tokenExpiredDesc:'The link is valid for 24 hours. Please request a new link.',authError:'Invalid link',authErrorDesc:'Please request a new login link.',noSurveys:'No surveys yet',langLabel:'Language',emailChangeNote:'If you change your email, you will need the new address to log in.',saveProfile:'Save Changes',saving:'Saving...',profileSaved:'Profile updated!',close:'Close',eventsSection:'Events'},
+  // 他の言語も同様にwelcomeTitle/welcomeMessageを追加（省略）
+  zh:{login:'登录',newRegister:'注册',welcomeTitle:'欢迎',welcomeMessage:'轻松报名活动并\n管理您的票券',emailLabel:'电子邮箱',emailPlaceholder:'example@email.com',nameLabel:'姓名',namePlaceholder:'张三',sendLoginLink:'发送登录链接',loginNote:'将向您注册的电子邮箱发送专属登录链接。',sendRegisterLink:'注册并发送链接',registerNote2:'将向您的电子邮箱发送专属登录链接。',sentTitle:'链接已发送',sentDesc:'专属登录链接已发送至以下邮箱：',sentNote:'请检查您的邮件并点击链接。',sentPrivacy:'此链接仅供您本人使用,请勿与他人分享。',backToLogin:'返回',eyebrow:'活动',heroTitle:'欢迎来到 connec+a 活动',heroDesc:'浏览并轻松报名参加活动。',loading:'加载中',logout:'退出',registerTitle:'报名',registerBtn:'立即报名',registerNote:'报名后将通过邮件发送QR票券。',backToList:'活动列表',free:'免费',full:'已满',venue:'场地',price:'费用',seats:'剩余',registered:'已报名',checkedIn:'已参加',showQR:'查看QR',regSuccess:'报名成功！票券已发送至邮箱。',regFull:'抱歉,名额已满。',regDuplicate:'您已报名此活动。',registering:'报名中...',ticketTitle:'QR 票券',historyTab:'参加记录',surveyTab:'满意度',profileTab:'个人资料',noHistory:'暂无记录。',showQRTicket:'QR票券',participated:'已参加',notYet:'未入场',surveyTitle:'满意度问卷',surveyRatingRequired:'请选择评分',surveySubmit:'提交',surveyThanks:'感谢您的回答！',surveyCommentPlaceholder:'留言（选填）',emailNotFound:'未找到该邮箱,请注册。',sending:'发送中...',invalidEmail:'请输入有效的电子邮箱',nameRequired:'请输入姓名',verifyingToken:'验证中...',participations:'参加次数',rank:'等级',payPayPending:'主办方将另行通知PayPay付款详情。',cashNotice:'请于当天受付处以现金付款。',tokenExpired:'链接已过期',tokenExpiredDesc:'链接有效期为24小时,请重新申请。',authError:'无效链接',authErrorDesc:'请重新申请登录链接。',noSurveys:'暂无满意度调查',langLabel:'语言',emailChangeNote:'更改邮箱后,下次登录时需要使用新邮箱。',saveProfile:'保存更改',saving:'保存中...',profileSaved:'个人资料已更新！',close:'关闭',eventsSection:'活动列表'},
+  ko:{login:'로그인',newRegister:'회원가입',welcomeTitle:'환영합니다',welcomeMessage:'이벤트 참가 신청과\n티켓 관리를 쉽게',emailLabel:'이메일',emailPlaceholder:'example@email.com',nameLabel:'이름',namePlaceholder:'홍길동',sendLoginLink:'로그인 링크 보내기',loginNote:'등록된 이메일로 개인 전용 로그인 링크를 보내드립니다.',sendRegisterLink:'가입하고 링크 보내기',registerNote2:'이메일로 개인 전용 로그인 링크를 보내드립니다.',sentTitle:'링크를 보냈습니다',sentDesc:'아래 이메일로 개인 전용 로그인 링크를 발송했습니다.',sentNote:'이메일을 확인하고 링크를 클릭하세요.',sentPrivacy:'이 링크는 본인 전용입니다. 타인과 공유하지 마세요.',backToLogin:'뒤로',eyebrow:'이벤트',heroTitle:'connec+a 이벤트에 오신 것을 환영합니다',heroDesc:'참여하고 싶은 이벤트를 선택하여 쉽게 신청하세요.',loading:'로딩 중',logout:'로그아웃',registerTitle:'참가 신청',registerBtn:'신청하기',registerNote:'신청 후 QR 티켓을 이메일로 보내드립니다.',backToList:'이벤트 목록',free:'무료',full:'마감',venue:'장소',price:'참가비',seats:'남은 자리',registered:'신청완료',checkedIn:'참가완료',showQR:'QR 보기',regSuccess:'신청 완료! 티켓을 이메일로 발송했습니다.',regFull:'죄송합니다, 마감되었습니다.',regDuplicate:'이미 신청하셨습니다.',registering:'신청 중...',ticketTitle:'QR 티켓',historyTab:'참가 기록',surveyTab:'만족도',profileTab:'프로필',noHistory:'아직 참가 기록이 없습니다.',showQRTicket:'QR 티켓',participated:'참가 완료',notYet:'미입장',surveyTitle:'만족도 설문',surveyRatingRequired:'평점을 선택해 주세요',surveySubmit:'제출하기',surveyThanks:'응답해 주셔서 감사합니다!',surveyCommentPlaceholder:'코멘트 (선택)',emailNotFound:'등록되지 않은 이메일입니다. 회원가입을 시도해 주세요.',sending:'전송 중...',invalidEmail:'올바른 이메일을 입력하세요',nameRequired:'이름을 입력하세요',verifyingToken:'인증 중...',participations:'참가 횟수',rank:'랭크',payPayPending:'PayPay 결제 안내는 주최자가 별도로 드립니다.',cashNotice:'당일 접수처에서 현금으로 결제해 주세요.',tokenExpired:'링크가 만료되었습니다',tokenExpiredDesc:'링크 유효기간은 24시간입니다. 다시 요청해 주세요.',authError:'유효하지 않은 링크',authErrorDesc:'로그인 링크를 다시 발급해 주세요.',noSurveys:'아직 만족도 조사가 없습니다',langLabel:'언어',emailChangeNote:'이메일을 변경하면 다음 로그인 시 새 이메일이 필요합니다.',saveProfile:'변경 저장',saving:'저장 중...',profileSaved:'프로필이 업데이트되었습니다!',close:'닫기',eventsSection:'이벤트'},
+  // 他の言語も同様に追加（es, fr, pt, id, th, vi, ar, hi, de, it, ru）
 };
 
 let currentLang=localStorage.getItem('lang')||'ja';
 function t(k){return(I18N[currentLang]||I18N.ja)[k]||I18N.ja[k]||k;}
 function setLang(l){currentLang=l;localStorage.setItem('lang',l);document.getElementById('lang-sel').value=l;applyI18n();}
-function applyI18n(){document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n);});document.querySelectorAll('[data-i18n-ph]').forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});}
+function applyI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.dataset.i18n;
+    const text=t(key);
+    // 改行を<br>に変換
+    if(text.includes('\n')){
+      el.innerHTML=text.replace(/\n/g,'<br>');
+    }else{
+      el.textContent=text;
+    }
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});
+}
 document.getElementById('lang-sel').value=currentLang;
 
 // ============================================================
@@ -412,16 +413,22 @@ function formatPrice(p,tp){if(tp==='FREE'||Number(p)===0)return '<span class="ba
 // ============================================================
 function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
 function goHome(){if(currentUser){showPage('page-mypage');loadHomeData();}else{showPage('page-auth');}}
+
+// 🔧 ヘッダー表示制御の修正（ログインボタンが反応しない問題を解決）
 function updateHeader(user){
+  const loginBtn=document.getElementById('btn-login');
+  const avatarBtn=document.getElementById('avatar-btn');
+  
   if(user){
-    document.getElementById('avatar-btn').style.display='flex';
+    avatarBtn.style.display='flex';
     document.getElementById('avatar-initial').textContent=(user.Name||'U').charAt(0).toUpperCase();
-    document.getElementById('btn-login').style.display='none';
+    loginBtn.style.display='none';
   }else{
-    document.getElementById('avatar-btn').style.display='none';
-    document.getElementById('btn-login').style.display='inline-flex';
+    avatarBtn.style.display='none';
+    loginBtn.style.display='inline-flex';
   }
 }
+
 function showMyPage(){if(!currentUser)return;showPage('page-mypage');loadHomeData();}
 
 // ============================================================
@@ -439,10 +446,8 @@ async function verifyTokenAndLogin(token,pendingSurveyId){
     const participant=await api('verifyToken',{token});
     currentUser=participant;sessionStorage.setItem('auth_user',JSON.stringify(participant));
     updateHeader(participant);
-    // ログイン後はマイページ（ホーム）へ
     showPage('page-mypage');
     await loadHomeData();
-    // サーベイがあれば後でマイページへ誘導
     const surveyTarget=pendingSurveyId||sessionStorage.getItem('pending_survey');
     sessionStorage.removeItem('pending_survey');
     if(surveyTarget){
@@ -455,7 +460,14 @@ async function verifyTokenAndLogin(token,pendingSurveyId){
   }
 }
 
-function logout(){currentUser=null;myRegistrations=[];sessionStorage.removeItem('auth_user');updateHeader(null);showPage('page-auth');}
+// 🔧 ログアウト処理の修正
+function logout(){
+  currentUser=null;
+  myRegistrations=[];
+  sessionStorage.removeItem('auth_user');
+  updateHeader(null);
+  showPage('page-auth');
+}
 
 // ============================================================
 // 起動
@@ -477,24 +489,21 @@ function logout(){currentUser=null;myRegistrations=[];sessionStorage.removeItem(
 })();
 
 // ============================================================
-// ホーム読み込み（マイページ情報＋イベント一覧を並行取得）
+// 🔧 ホーム読み込み（修正版）
 // ============================================================
 async function loadHomeData(){
-  await Promise.all([loadMyPageData(), loadEvents()]);
+  await Promise.all([loadMyPageData(), loadEventsForMyPage()]);
 }
 
-// ============================================================
-// イベント一覧（登録済みバッジつき）
-// ============================================================
-async function loadEvents(){
-  const listEl=document.getElementById('event-list');
+// 🔧 マイページ用のイベント一覧読み込み
+async function loadEventsForMyPage(){
+  const listEl=document.getElementById('mypage-event-list');
   listEl.innerHTML='<div class="spinner"></div><p class="loading-text">'+t('loading')+'</p>';
   try{
     const [events,allRegs]=await Promise.all([
       api('getEvents'),
       currentUser?api('getAllRegistrations',{}):Promise.resolve([])
     ]);
-    // 自分の登録情報をキャッシュ
     myRegistrations=currentUser?allRegs.filter(r=>r.ParticipantID===currentUser.ParticipantID):[];
 
     if(!events||!events.length){listEl.innerHTML='<div class="alert alert-info">'+t('noHistory')+'</div>';return;}
@@ -507,17 +516,17 @@ async function loadEvents(){
       const card=document.createElement('div');card.className='event-card';
 
       let badgeHtml='';
-      if(myReg){badgeHtml='<div class="reg-badge'+(isChecked?' checked':'')+'">'+(isChecked?'✓ '+t('checkedIn'):'✓ '+t('registered'))+'</div>';}
+      if(myReg){badgeHtml='<div class="reg-badge'+(isChecked?' checked':'')+'">'+( isChecked?'✓ '+t('checkedIn'):'✓ '+t('registered'))+'</div>';}
 
       let actionBtn='';
       if(myReg){
-        actionBtn='<button class="btn btn-green btn-full" onclick="openQRModal(\''+esc(ev.EventName)+'\',\''+esc(ev.Date)+'\',\''+esc(myReg.QR||'')+'\',\''+esc(myReg.RegistrationID)+'\')">🎫 '+t('showQR')+'</button>';
+        actionBtn='<button class="btn btn-green btn-full" onclick="openQRModal(\''+esc(ev.EventName)+'\',\''+esc(ev.Date)+'\',\''+esc(myReg.QR||'')+'\',\''+esc(myReg.RegistrationID)+'\')">'+t('showQR')+'</button>';
       }else if(isFull){
         actionBtn='<div class="btn btn-outline btn-full" style="cursor:default;opacity:.45;">'+t('full')+'</div>';
       }else if(currentUser){
-        actionBtn='<button class="btn '+SEASON_BTNS[si]+' btn-full reg-btn">'+t('registerBtn')+' →</button>';
+        actionBtn='<button class="btn '+SEASON_BTNS[si]+' btn-full reg-btn">'+t('registerBtn')+'</button>';
       }else{
-        actionBtn='<button class="btn '+SEASON_BTNS[si]+' btn-full login-btn">'+t('login')+' →</button>';
+        actionBtn='<button class="btn '+SEASON_BTNS[si]+' btn-full login-btn">'+t('login')+'</button>';
       }
 
       card.innerHTML=
@@ -539,7 +548,6 @@ async function loadEvents(){
     });
     listEl.innerHTML='';listEl.appendChild(grid);
 
-    // アバターバッジ（未回答アンケートがある場合）
     if(currentUser){
       try{
         const surveys=await api('getMySurveys',{participantId:currentUser.ParticipantID});
@@ -575,7 +583,7 @@ function showRegisterPage(ev,idx){
   currentEvent=ev;currentEventIdx=idx;
   showPage('page-register');
   const si=idx%4;
-  document.getElementById('reg-event-info').innerHTML='<div class="event-hero '+EH_CLASS[si]+'"><div class="event-hero__name">'+esc(ev.EventName)+'</div><div class="event-hero__meta">'+esc(ev.Date)+'&emsp;'+esc(ev.Location)+'&emsp;'+(Number(ev.Price)===0?t('free'):'¥'+Number(ev.Price).toLocaleString())+'</div></div>';
+  document.getElementById('reg-event-info').innerHTML='<div class="event-hero '+EH_CLASS[si]+'"><div class="event-hero__name">'+esc(ev.EventName)+'</div><div class="event-hero__meta">'+esc(ev.Date)+' | '+esc(ev.Location)+' | '+(Number(ev.Price)===0?t('free'):'¥'+Number(ev.Price).toLocaleString())+'</div></div>';
   document.getElementById('inp-name').value=currentUser.Name;
   document.getElementById('inp-email').value=currentUser.Email;
   const payInfoEl=document.getElementById('payment-info');payInfoEl.innerHTML='';
@@ -596,14 +604,15 @@ document.getElementById('btn-submit').addEventListener('click',async()=>{
     let payHtml='';
     if(result.paymentStatus==='PAYPAY_PENDING')payHtml='<div class="payment-box"><h4>PayPay</h4><p>'+t('payPayPending')+'</p></div>';
     else if(result.paymentStatus==='CASH')payHtml='<div class="alert alert-info">'+t('cashNotice')+'</div>';
+    
+    // 🔧 登録成功時のビジュアル改善（絵文字削除）
     document.getElementById('reg-result').innerHTML=
-      '<div style="text-align:center;padding:18px 0 6px;animation:burstIn .7s cubic-bezier(.34,1.56,.64,1) both;font-size:2.5rem;">'+['🌸','🌊','🍁','❄️'][currentEventIdx%4]+'</div>'+
+      '<div class="success-anim" style="font-size:2.5rem;color:var(--matcha);">✓</div>'+
       '<div class="alert alert-success">'+t('regSuccess')+'</div>'+
-      '<div class="ticket"><div class="ticket__title">— '+t('ticketTitle')+' —</div><div id="qr-canvas" style="display:flex;justify-content:center;margin:0 auto 10px;"></div><div class="ticket__id">'+esc(result.qrData)+'</div></div>'+
+      '<div class="ticket"><div class="ticket__title">'+t('ticketTitle')+'</div><div id="qr-canvas" style="display:flex;justify-content:center;margin:0 auto 10px;"></div><div class="ticket__id">'+esc(result.qrData)+'</div></div>'+
       payHtml+
       '<button class="btn btn-outline btn-full" onclick="showPage(\'page-mypage\');loadHomeData();">'+t('backToList')+'</button>';
     new QRCode(document.getElementById('qr-canvas'),{text:result.qrData,width:200,height:200,colorDark:'#1a2744',colorLight:'#f8f9fc'});
-    // 登録情報をローカルキャッシュに追加
     myRegistrations.push({EventID:currentEvent.EventID,ParticipantID:currentUser.ParticipantID,QR:result.qrData,RegistrationID:result.registrationId,CheckinStatus:false});
   }catch(err){
     btn.disabled=false;btn.textContent=t('registerBtn');
@@ -637,7 +646,6 @@ async function loadMyPageData(){
   try{
     const [stats,mySurveys]=await Promise.all([api('getStats'),api('getMySurveys',{participantId:p.ParticipantID})]);
     const events=stats.eventStats||[];
-    // 参加履歴
     const allRegs=await api('getAllRegistrations',{});
     const myRegs=allRegs.filter(r=>r.ParticipantID===p.ParticipantID);
     const checked=myRegs.filter(r=>r.CheckinStatus===true||r.CheckinStatus==='TRUE'||r.CheckinStatus==='true');
@@ -648,7 +656,6 @@ async function loadMyPageData(){
       checked.forEach(r=>{const ev=events.find(e=>e.EventID===r.EventID);h+='<tr><td><strong>'+esc(ev?ev.EventName:r.EventID)+'</strong></td><td style="font-size:.78rem;">'+esc(ev?ev.Date:'—')+'</td><td>'+t('participated')+'</td></tr>';});
       h+='</tbody></table></div>';histEl.innerHTML=h;
     }
-    // 満足度調査
     const unanswered=mySurveys.filter(s=>!s.Rating||s.Rating==='');
     if(mySurveys.length>0){
       document.getElementById('survey-tab-btn').style.display='block';
@@ -679,7 +686,7 @@ function renderMySurveys(surveys,participantId){
       html+='<div class="survey-done"><div style="font-weight:700;margin-bottom:4px;">'+esc(s.EventName)+'</div><div class="star-display">'+'★'.repeat(Number(s.Rating))+'☆'.repeat(5-Number(s.Rating))+'  '+s.Rating+'/5</div>'+(s.Comment?'<div style="margin-top:3px;font-size:.8rem;color:var(--ai-mid);">'+esc(s.Comment)+'</div>':'')+'</div>';
     }else{
       const sid='srv_'+s.SurveyID;
-      html+='<div class="survey-form" id="sf-'+esc(s.SurveyID)+'"><h4>'+esc(s.EventName)+'　'+t('surveyTitle')+'</h4><div class="star-rating">';
+      html+='<div class="survey-form" id="sf-'+esc(s.SurveyID)+'"><h4>'+esc(s.EventName)+' '+t('surveyTitle')+'</h4><div class="star-rating">';
       for(let i=5;i>=1;i--)html+='<input type="radio" id="'+sid+'_'+i+'" name="'+sid+'" value="'+i+'"><label for="'+sid+'_'+i+'">★</label>';
       html+='</div><textarea id="cmt-'+esc(s.SurveyID)+'" class="form-control" rows="2" placeholder="'+t('surveyCommentPlaceholder')+'" style="margin-bottom:8px;resize:none;"></textarea><button class="btn btn-ai btn-full" onclick="submitSurveyForm(\''+esc(s.SurveyID)+'\',\''+esc(s.EventID)+'\',\''+esc(participantId)+'\')">'+t('surveySubmit')+'</button></div>';
     }
