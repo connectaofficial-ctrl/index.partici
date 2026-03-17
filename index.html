@@ -18,10 +18,8 @@
     html{scroll-behavior:smooth;}
     body{font-family:'Noto Sans JP',sans-serif;background:var(--shiro);color:var(--ai);min-height:100vh;overflow-x:hidden;}
 
-    /* 藍染パターン */
     .indigo-pattern{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8 L72 40 L40 72 L8 40 Z' fill='none' stroke='%231a2744' stroke-width='1.5'/%3E%3Ccircle cx='40' cy='40' r='3' fill='%231a2744'/%3E%3C/svg%3E");}
 
-    /* 四季アニメ */
     .seasons-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
     .petal{position:absolute;font-size:.9rem;animation:petalFall linear infinite;opacity:0;}
     @keyframes petalFall{0%{transform:translateY(-30px) rotate(0deg) translateX(0);opacity:0;}5%{opacity:.5;}95%{opacity:.3;}100%{transform:translateY(105vh) rotate(720deg) translateX(60px);opacity:0;}}
@@ -32,7 +30,6 @@
     .yuki{position:absolute;border-radius:50%;background:rgba(184,212,240,.7);animation:yukiFall linear infinite;opacity:0;}
     @keyframes yukiFall{0%{opacity:0;}10%{opacity:.7;}90%{opacity:.3;}100%{transform:translateY(105vh);opacity:0;}}
 
-    /* ヘッダー */
     .season-bar{height:2px;background:linear-gradient(90deg,var(--haru),var(--natsu),var(--aki),var(--fuyu));}
     .header{position:sticky;top:0;z-index:100;background:rgba(248,249,252,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
     .header__logo{display:flex;align-items:center;gap:10px;}
@@ -46,12 +43,10 @@
     .header__user{font-size:.8rem;color:var(--ai-soft);display:flex;align-items:center;gap:6px;}
     .header__user strong{color:var(--ai);}
 
-    /* メイン */
     main{position:relative;z-index:2;padding:36px 20px;}
     .container{max-width:880px;margin:0 auto;}
     .container-sm{max-width:520px;margin:0 auto;}
 
-    /* ===== 認証画面 ===== */
     .auth-wrap{min-height:calc(100vh - 62px);display:flex;align-items:center;justify-content:center;padding:20px;position:relative;z-index:2;}
     .auth-card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow-md);padding:40px 36px;width:100%;max-width:420px;border:1px solid var(--border);position:relative;overflow:hidden;}
     .auth-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--haru),var(--natsu),var(--aki),var(--fuyu));}
@@ -60,22 +55,18 @@
     .auth-logo-name{font-family:'Zen Old Mincho',serif;font-size:1.4rem;font-weight:900;color:var(--ai);letter-spacing:.08em;}
     .auth-logo-sub{font-size:.7rem;color:var(--ai-soft);letter-spacing:.2em;margin-top:2px;}
 
-    /* タブ切り替え */
     .auth-tabs{display:flex;gap:0;margin-bottom:24px;background:var(--shiro-2);border-radius:var(--rs);padding:3px;}
     .auth-tab{flex:1;padding:9px;border:none;background:none;font-size:.85rem;font-weight:600;color:var(--ai-soft);cursor:pointer;border-radius:8px;transition:all .2s;font-family:'Noto Sans JP',sans-serif;}
     .auth-tab.active{background:#fff;color:var(--ai);box-shadow:var(--shadow);}
-
     .auth-panel{display:none;}
     .auth-panel.active{display:block;}
 
-    /* メール送信完了画面 */
     .sent-box{text-align:center;padding:20px 0;}
     .sent-box .icon{font-size:3.5rem;margin-bottom:16px;}
     .sent-box h3{font-family:'Zen Old Mincho',serif;font-size:1.1rem;color:var(--ai);margin-bottom:8px;}
     .sent-box p{font-size:.875rem;color:var(--ai-soft);line-height:1.8;}
     .sent-email{display:inline-block;background:var(--ai-pale);border-radius:6px;padding:4px 12px;font-weight:700;color:var(--ai-mid);margin:8px 0;font-size:.9rem;}
 
-    /* ヒーロー */
     .hero{text-align:center;margin-bottom:44px;animation:heroIn .8s cubic-bezier(.16,1,.3,1) both;}
     @keyframes heroIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
     .hero__eyebrow{font-size:.7rem;letter-spacing:.3em;color:var(--ai-soft);margin-bottom:14px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;}
@@ -87,7 +78,6 @@
     .seasons-banner{display:flex;height:4px;border-radius:99px;overflow:hidden;max-width:260px;margin:0 auto;gap:2px;}
     .sb{flex:1;border-radius:99px;}
 
-    /* イベントグリッド */
     .event-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;}
     .event-card{background:var(--shiro-warm);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--border);overflow:hidden;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;animation:cardIn .5s ease both;position:relative;}
     .event-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg);}
@@ -95,14 +85,14 @@
     .event-card:nth-child(4n+1)::before{background:linear-gradient(90deg,var(--haru),#d080a0);}
     .event-card:nth-child(4n+2)::before{background:linear-gradient(90deg,var(--natsu),#5a3a8a);}
     .event-card:nth-child(4n+3)::before{background:linear-gradient(90deg,var(--aki),#a03010);}
-    .event-card:nth-child(4n)::before  {background:linear-gradient(90deg,#4a6fa5,var(--fuyu));}
+    .event-card:nth-child(4n)::before{background:linear-gradient(90deg,#4a6fa5,var(--fuyu));}
     @keyframes cardIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
     .event-card:nth-child(1){animation-delay:.04s;}.event-card:nth-child(2){animation-delay:.08s;}.event-card:nth-child(3){animation-delay:.12s;}.event-card:nth-child(4){animation-delay:.16s;}
     .event-card__visual{height:96px;display:flex;align-items:center;justify-content:center;}
     .event-card:nth-child(4n+1) .event-card__visual{background:linear-gradient(135deg,rgba(244,184,203,.25),rgba(137,201,122,.15));}
     .event-card:nth-child(4n+2) .event-card__visual{background:linear-gradient(135deg,rgba(123,94,167,.18),rgba(91,163,232,.15));}
     .event-card:nth-child(4n+3) .event-card__visual{background:linear-gradient(135deg,rgba(212,81,26,.15),rgba(232,200,74,.18));}
-    .event-card:nth-child(4n)   .event-card__visual{background:linear-gradient(135deg,rgba(184,212,240,.25),rgba(176,40,60,.1));}
+    .event-card:nth-child(4n) .event-card__visual{background:linear-gradient(135deg,rgba(184,212,240,.25),rgba(176,40,60,.1));}
     .event-card__visual-label{font-family:'Zen Old Mincho',serif;font-size:.65rem;letter-spacing:.2em;color:rgba(26,39,68,.3);font-weight:700;text-transform:uppercase;}
     .event-card__body{padding:16px 18px 18px;}
     .event-card__tag{font-size:.65rem;letter-spacing:.2em;color:var(--ai-soft);margin-bottom:4px;font-weight:600;text-transform:uppercase;}
@@ -113,7 +103,6 @@
     .event-card__label{color:var(--ai-soft);}
     .event-card__value{font-weight:600;color:var(--ai-mid);}
 
-    /* ボタン */
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:10px 20px;border-radius:99px;font-size:.875rem;font-weight:700;cursor:pointer;border:none;transition:all .3s cubic-bezier(.34,1.56,.64,1);font-family:'Noto Sans JP',sans-serif;}
     .btn:active{transform:scale(.97)!important;}
     .btn:disabled{opacity:.45;cursor:not-allowed;transform:none!important;}
@@ -128,13 +117,11 @@
     .btn-full{width:100%;}
     .btn-lg{padding:13px 26px;font-size:.95rem;}
 
-    /* バッジ */
     .badge{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.7rem;font-weight:700;}
     .badge-free{background:rgba(78,114,82,.1);color:#2d7a20;}
     .badge-paid{background:rgba(42,74,127,.08);color:var(--ai-mid);}
     .badge-full{background:rgba(212,81,26,.1);color:var(--aki);}
 
-    /* フォーム */
     .form-group{margin-bottom:18px;}
     .form-label{display:block;font-size:.8rem;font-weight:700;color:var(--ai-mid);margin-bottom:7px;letter-spacing:.04em;}
     .form-control{width:100%;padding:11px 15px;border:1.5px solid var(--border);border-radius:var(--rs);font-size:.9rem;color:var(--ai);background:#fff;outline:none;transition:all .2s;font-family:'Noto Sans JP',sans-serif;}
@@ -142,24 +129,20 @@
     .form-control.error{border-color:var(--aki);}
     .form-control::placeholder{color:rgba(74,111,165,.4);}
 
-    /* カード */
     .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:26px;margin-bottom:18px;border:1px solid var(--border);}
     .card-title{font-family:'Zen Old Mincho',serif;font-size:1.05rem;font-weight:700;color:var(--ai);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
     .card-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
 
-    /* アラート */
     .alert{padding:13px 16px;border-radius:var(--rs);font-size:.875rem;margin-bottom:14px;line-height:1.7;}
     .alert-success{background:#f0fdf4;border-left:3px solid #22c55e;color:#15803d;}
     .alert-danger{background:rgba(212,81,26,.06);border-left:3px solid var(--aki);color:#8a2010;}
     .alert-info{background:rgba(42,74,127,.06);border-left:3px solid var(--ai-soft);color:var(--ai-mid);}
     .alert-warning{background:rgba(184,212,240,.2);border-left:3px solid var(--fuyu);color:#3a5a7a;}
 
-    /* スピナー */
     .spinner{width:36px;height:36px;border:3px solid var(--shiro-2);border-top-color:var(--ai-mid);border-radius:50%;animation:spin .8s linear infinite;margin:28px auto;}
     @keyframes spin{to{transform:rotate(360deg);}}
     .loading-text{text-align:center;color:var(--ai-soft);font-size:.875rem;}
 
-    /* イベント詳細ヘッダー */
     .event-hero{border-radius:var(--r);padding:20px 22px;margin-bottom:18px;position:relative;overflow:hidden;}
     .eh-h{background:linear-gradient(135deg,rgba(244,184,203,.2),rgba(137,201,122,.12));border:1px solid rgba(244,184,203,.35);}
     .eh-n{background:linear-gradient(135deg,rgba(123,94,167,.15),rgba(91,163,232,.12));border:1px solid rgba(123,94,167,.25);}
@@ -168,7 +151,6 @@
     .event-hero__name{font-family:'Zen Old Mincho',serif;font-size:1.15rem;font-weight:700;color:var(--ai);margin-bottom:8px;}
     .event-hero__meta{font-size:.85rem;color:var(--ai-mid);line-height:2;}
 
-    /* QRチケット */
     .ticket{background:linear-gradient(135deg,#fff,var(--shiro));border:1.5px dashed rgba(42,74,127,.2);border-radius:var(--r);padding:26px;text-align:center;margin:18px 0;position:relative;}
     .ticket::before,.ticket::after{content:'';position:absolute;width:20px;height:20px;background:var(--shiro);border-radius:50%;top:50%;transform:translateY(-50%);}
     .ticket::before{left:-11px;border:1.5px dashed rgba(42,74,127,.2);}
@@ -177,7 +159,6 @@
     #qr-canvas{display:flex;justify-content:center;margin:0 auto 10px;}
     .ticket__id{font-size:.66rem;color:var(--ai-soft);font-family:monospace;word-break:break-all;background:var(--shiro-2);padding:5px 9px;border-radius:5px;display:inline-block;}
 
-    /* プロフィール */
     .profile-card{border-radius:var(--r);padding:24px;margin-bottom:18px;background:var(--ai);color:#fff;position:relative;overflow:hidden;}
     .profile-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 10% 20%,rgba(244,184,203,.15) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 90% 80%,rgba(123,94,167,.15) 0%,transparent 60%);}
     .profile-name{font-family:'Zen Old Mincho',serif;font-size:1.3rem;font-weight:700;margin-bottom:4px;position:relative;z-index:1;}
@@ -186,32 +167,27 @@
     .profile-stat__num{font-size:1.7rem;font-weight:800;line-height:1;}
     .profile-stat__label{font-size:.68rem;opacity:.55;margin-top:2px;}
 
-    /* ランク */
     .rank-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:99px;font-size:.72rem;font-weight:700;}
-    .rank-new    {background:rgba(42,74,127,.08);color:var(--ai-soft);}
-    .rank-bronze {background:rgba(192,120,60,.12);color:#8a4810;}
-    .rank-silver {background:rgba(100,120,160,.12);color:#405080;}
-    .rank-gold   {background:rgba(232,200,74,.18);color:#806010;}
+    .rank-new{background:rgba(42,74,127,.08);color:var(--ai-soft);}
+    .rank-bronze{background:rgba(192,120,60,.12);color:#8a4810;}
+    .rank-silver{background:rgba(100,120,160,.12);color:#405080;}
+    .rank-gold{background:rgba(232,200,74,.18);color:#806010;}
     .rank-platinum{background:rgba(123,94,167,.12);color:var(--natsu);}
 
-    /* タブ */
     .tabs{display:flex;gap:2px;margin-bottom:18px;background:var(--shiro-2);padding:3px;border-radius:var(--rs);}
     .tab-btn{flex:1;padding:8px 12px;border:none;background:none;font-size:.8rem;font-weight:600;color:var(--ai-soft);cursor:pointer;border-radius:7px;transition:all .2s;font-family:'Noto Sans JP',sans-serif;white-space:nowrap;}
     .tab-btn.active{background:#fff;color:var(--ai);box-shadow:var(--shadow);}
 
-    /* テーブル */
     .table-wrap{overflow-x:auto;}
     table{width:100%;border-collapse:collapse;font-size:.82rem;}
     th{padding:9px 12px;text-align:left;color:var(--ai-soft);font-weight:600;border-bottom:2px solid var(--shiro-2);white-space:nowrap;}
     td{padding:10px 12px;border-bottom:1px solid var(--shiro-2);}
     tr:hover>td{background:rgba(42,74,127,.02);}
 
-    /* 支払い説明 */
     .payment-box{background:rgba(42,74,127,.05);border:1px solid rgba(42,74,127,.12);border-radius:var(--rs);padding:14px;margin-bottom:14px;font-size:.85rem;}
     .payment-box h4{color:var(--ai-mid);margin-bottom:5px;font-weight:700;}
     .payment-box p{color:var(--ai-mid);line-height:1.8;opacity:.85;}
 
-    /* 満足度フォーム */
     .survey-form{background:linear-gradient(135deg,rgba(244,184,203,.12),rgba(42,74,127,.06));border:1px solid rgba(244,184,203,.3);border-radius:var(--rs);padding:14px;margin-bottom:12px;}
     .survey-form h4{font-family:'Zen Old Mincho',serif;font-size:.88rem;font-weight:700;color:var(--ai);margin-bottom:8px;}
     .star-rating{display:flex;gap:4px;margin-bottom:8px;flex-direction:row-reverse;justify-content:flex-end;}
@@ -221,7 +197,6 @@
     .survey-done{background:rgba(78,114,82,.08);border:1px solid rgba(78,114,82,.2);border-radius:var(--rs);padding:11px 14px;font-size:.8rem;color:var(--matcha);margin-bottom:10px;}
     .star-display{color:#f59e0b;font-size:.95rem;}
 
-    /* ページ切替 */
     .page{display:none;}
     .page.active{display:block;animation:pageIn .4s ease both;}
     @keyframes pageIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
@@ -261,11 +236,11 @@
       <button class="header__btn" onclick="logout()" data-i18n="logout">ログアウト</button>
     </div>
     <button class="header__btn" id="btn-mypage" onclick="showMyPage()" style="display:none;" data-i18n="mypage">マイページ</button>
-    <button class="header__btn" id="btn-back"   onclick="showEventList()" style="display:none;" data-i18n="back">一覧へ</button>
+    <button class="header__btn" id="btn-back" onclick="showEventList()" style="display:none;" data-i18n="back">一覧へ</button>
   </div>
 </header>
 
-<!-- ===== 認証画面 ===== -->
+<!-- 認証画面 -->
 <div id="page-auth" class="page active">
   <div class="auth-wrap">
     <div class="auth-card">
@@ -274,13 +249,10 @@
         <div class="auth-logo-name">connec+a</div>
         <div class="auth-logo-sub">Event Platform</div>
       </div>
-
       <div class="auth-tabs">
         <button class="auth-tab active" onclick="switchAuthTab('login')" data-i18n="login">ログイン</button>
         <button class="auth-tab" onclick="switchAuthTab('register')" data-i18n="newRegister">新規登録</button>
       </div>
-
-      <!-- ログインパネル -->
       <div id="auth-login" class="auth-panel active">
         <div id="login-alert"></div>
         <div class="form-group">
@@ -290,8 +262,6 @@
         <button class="btn btn-ai btn-full btn-lg" onclick="requestLink('login')" data-i18n="sendLoginLink">ログインリンクを送信</button>
         <p style="font-size:.75rem;color:var(--ai-soft);text-align:center;margin-top:10px;line-height:1.7;" data-i18n="loginNote">登録済みのメールアドレスに個人専用リンクを送信します</p>
       </div>
-
-      <!-- 新規登録パネル -->
       <div id="auth-register" class="auth-panel">
         <div id="register-alert"></div>
         <div class="form-group">
@@ -305,8 +275,6 @@
         <button class="btn btn-ai btn-full btn-lg" onclick="requestLink('register')" data-i18n="sendRegisterLink">登録してリンクを送信</button>
         <p style="font-size:.75rem;color:var(--ai-soft);text-align:center;margin-top:10px;line-height:1.7;" data-i18n="registerNote2">個人専用のログインリンクをメールでお送りします</p>
       </div>
-
-      <!-- 送信完了 -->
       <div id="auth-sent" class="auth-panel">
         <div class="sent-box">
           <div class="icon">📩</div>
@@ -322,7 +290,7 @@
   </div>
 </div>
 
-<!-- ===== イベント一覧 ===== -->
+<!-- イベント一覧 -->
 <div id="page-events" class="page">
   <main>
     <div class="container">
@@ -338,7 +306,7 @@
   </main>
 </div>
 
-<!-- ===== 参加登録 ===== -->
+<!-- 参加登録 -->
 <div id="page-register" class="page">
   <main>
     <div class="container-sm">
@@ -365,7 +333,7 @@
   </main>
 </div>
 
-<!-- ===== マイページ ===== -->
+<!-- マイページ -->
 <div id="page-mypage" class="page">
   <main>
     <div class="container-sm">
@@ -386,16 +354,15 @@
 
 <script>
 const GAS_URL  = 'https://script.google.com/macros/s/AKfycbw94iJOYloTfXOeOONgwyP3MlTXOBolUdSCFO57NyfYDr-0ISYMTLwntsQxinj5c8CsFA/exec';
-const SITE_URL = location.href.split('?')[0]; // このページのURL
+const SITE_URL = location.href.split('?')[0];
 
 // ============================================================
 // 多言語
 // ============================================================
 const I18N = {
-  ja:{login:'ログイン',newRegister:'新規登録',emailLabel:'メールアドレス',emailPlaceholder:'example@email.com',nameLabel:'お名前',namePlaceholder:'山田 太郎',sendLoginLink:'ログインリンクを送信',loginNote:'登録済みのメールアドレスに個人専用リンクを送信します',sendRegisterLink:'登録してリンクを送信',registerNote2:'個人専用のログインリンクをメールでお送りします',sentTitle:'リンクを送信しました',sentDesc:'以下のメールアドレスに個人専用ログインリンクを送信しました。',sentNote:'メールを確認して、リンクをクリックしてください。',sentPrivacy:'このリンクはあなた専用です。他の人と共有しないでください。',backToLogin:'戻る',eyebrow:'Events',heroTitle:'のイベントへようこそ',heroDesc:'参加したいイベントを選んで、簡単にお申し込みいただけます。',loading:'読み込み中',mypage:'マイページ',back:'一覧へ',logout:'ログアウト',registerTitle:'参加登録',registerBtn:'登録する',registerNote:'登録後、QRチケットをメールでお送りします',free:'無料',full:'満席',venue:'会場',price:'参加費',seats:'残席',regSuccess:'登録が完了しました！チケットをメールで送信しました。',regFull:'満席のため登録できません。',regDuplicate:'すでに登録済みです。',validationError:'入力内容を確認してください。',registering:'登録中...',ticketTitle:'QR チケット',historyTab:'参加履歴',registrationsTab:'登録中',surveyTab:'満足度調査',noHistory:'まだ参加履歴がありません。',noRegistrations:'登録中のイベントはありません。',showQR:'QRチケットを表示',participated:'参加済み',notYet:'未入場',surveyTitle:'満足度アンケート',surveyNotice:'{n}件の未回答アンケートがあります',noSurveys:'満足度アンケートはまだありません',surveyRatingRequired:'評価を選択してください',surveySubmit:'送信する',surveyThanks:'回答ありがとうございました！',surveyCommentPlaceholder:'一言コメント（任意）',emailNotFound:'このメールアドレスは登録されていません。新規登録をお試しください。',sending:'送信中...',invalidEmail:'有効なメールアドレスを入力してください',nameRequired:'お名前を入力してください',verifyingToken:'認証中...',authError:'リンクが無効か期限切れです。再度ログインしてください。',backToList:'イベント一覧に戻る',participations:'参加回数',rank:'ランク',payPayPending:'管理者から別途PayPayのご案内をします。',cashNotice:'当日受付にて現金でお支払いください。',tokenExpired:'リンクの有効期限が切れています',tokenExpiredDesc:'リンクは24時間有効です。再度ログイン画面からリンクを送信してください。',authError:'リンクが無効です',authErrorDesc:'再度ログイン画面からリンクを発行してください。'},
-  en:{login:'Login',newRegister:'Sign Up',emailLabel:'Email',emailPlaceholder:'example@email.com',nameLabel:'Name',namePlaceholder:'John Doe',sendLoginLink:'Send Login Link',loginNote:'A personal login link will be sent to your registered email.',sendRegisterLink:'Register & Send Link',registerNote2:'A personal login link will be sent to your email.',sentTitle:'Link Sent',sentDesc:'A personal login link has been sent to:',sentNote:'Please check your email and click the link.',sentPrivacy:'This link is for you only. Do not share it with others.',backToLogin:'Back',eyebrow:'Events',heroTitle:'Welcome to connec+a Events',heroDesc:'Browse and register for events easily.',loading:'Loading',mypage:'My Page',back:'Back',logout:'Logout',registerTitle:'Register',registerBtn:'Register',registerNote:'A QR ticket will be sent to your email.',free:'Free',full:'Full',venue:'Venue',price:'Price',seats:'Seats Left',regSuccess:'Registration complete! Ticket sent by email.',regFull:'Sorry, this event is full.',regDuplicate:'You are already registered.',validationError:'Please check your input.',registering:'Registering...',ticketTitle:'QR Ticket',historyTab:'History',registrationsTab:'Registered',surveyTab:'Survey',noHistory:'No history yet.',noRegistrations:'No registered events.',showQR:'Show QR Ticket',participated:'Attended',notYet:'Not yet',surveyTitle:'Satisfaction Survey',surveyNotice:'{n} survey(s) awaiting response',noSurveys:'No surveys yet',surveyRatingRequired:'Please select a rating',surveySubmit:'Submit',surveyThanks:'Thank you!',surveyCommentPlaceholder:'Comment (optional)',emailNotFound:'Email not found. Please sign up.',sending:'Sending...',invalidEmail:'Please enter a valid email',nameRequired:'Please enter your name',verifyingToken:'Verifying...',authError:'Invalid or expired link. Please log in again.',backToList:'Back to Events',participations:'Participations',rank:'Rank',payPayPending:'PayPay details will be sent by organizer.',cashNotice:'Please pay cash at the reception.',tokenExpired:'Link has expired',tokenExpiredDesc:'The link is valid for 24 hours. Please request a new link.',authError:'Invalid link',authErrorDesc:'Please request a new login link.'},
+  ja:{login:'ログイン',newRegister:'新規登録',emailLabel:'メールアドレス',emailPlaceholder:'example@email.com',nameLabel:'お名前',namePlaceholder:'山田 太郎',sendLoginLink:'ログインリンクを送信',loginNote:'登録済みのメールアドレスに個人専用リンクを送信します',sendRegisterLink:'登録してリンクを送信',registerNote2:'個人専用のログインリンクをメールでお送りします',sentTitle:'リンクを送信しました',sentDesc:'以下のメールアドレスに個人専用ログインリンクを送信しました。',sentNote:'メールを確認して、リンクをクリックしてください。',sentPrivacy:'このリンクはあなた専用です。他の人と共有しないでください。',backToLogin:'戻る',eyebrow:'Events',heroTitle:'のイベントへようこそ',heroDesc:'参加したいイベントを選んで、簡単にお申し込みいただけます。',loading:'読み込み中',mypage:'マイページ',back:'一覧へ',logout:'ログアウト',registerTitle:'参加登録',registerBtn:'登録する',registerNote:'登録後、QRチケットをメールでお送りします',free:'無料',full:'満席',venue:'会場',price:'参加費',seats:'残席',regSuccess:'登録が完了しました！チケットをメールで送信しました。',regFull:'満席のため登録できません。',regDuplicate:'すでに登録済みです。',validationError:'入力内容を確認してください。',registering:'登録中...',ticketTitle:'QR チケット',historyTab:'参加履歴',registrationsTab:'登録中',surveyTab:'満足度調査',noHistory:'まだ参加履歴がありません。',noRegistrations:'登録中のイベントはありません。',showQR:'QRチケットを表示',participated:'参加済み',notYet:'未入場',surveyTitle:'満足度アンケート',surveyNotice:'{n}件の未回答アンケートがあります',noSurveys:'満足度アンケートはまだありません',surveyRatingRequired:'評価を選択してください',surveySubmit:'送信する',surveyThanks:'回答ありがとうございました！',surveyCommentPlaceholder:'一言コメント（任意）',emailNotFound:'このメールアドレスは登録されていません。新規登録をお試しください。',sending:'送信中...',invalidEmail:'有効なメールアドレスを入力してください',nameRequired:'お名前を入力してください',verifyingToken:'認証中...',authError:'リンクが無効か期限切れです。再度ログインしてください。',backToList:'イベント一覧に戻る',participations:'参加回数',rank:'ランク',payPayPending:'管理者から別途PayPayのご案内をします。',cashNotice:'当日受付にて現金でお支払いください。',tokenExpired:'リンクの有効期限が切れています',tokenExpiredDesc:'リンクは24時間有効です。再度ログイン画面からリンクを送信してください。',authErrorDesc:'再度ログイン画面からリンクを発行してください。'},
+  en:{login:'Login',newRegister:'Sign Up',emailLabel:'Email',emailPlaceholder:'example@email.com',nameLabel:'Name',namePlaceholder:'John Doe',sendLoginLink:'Send Login Link',loginNote:'A personal login link will be sent to your registered email.',sendRegisterLink:'Register & Send Link',registerNote2:'A personal login link will be sent to your email.',sentTitle:'Link Sent',sentDesc:'A personal login link has been sent to:',sentNote:'Please check your email and click the link.',sentPrivacy:'This link is for you only. Do not share it with others.',backToLogin:'Back',eyebrow:'Events',heroTitle:'Welcome to connec+a Events',heroDesc:'Browse and register for events easily.',loading:'Loading',mypage:'My Page',back:'Back',logout:'Logout',registerTitle:'Register',registerBtn:'Register',registerNote:'A QR ticket will be sent to your email.',free:'Free',full:'Full',venue:'Venue',price:'Price',seats:'Seats Left',regSuccess:'Registration complete! Ticket sent by email.',regFull:'Sorry, this event is full.',regDuplicate:'You are already registered.',validationError:'Please check your input.',registering:'Registering...',ticketTitle:'QR Ticket',historyTab:'History',registrationsTab:'Registered',surveyTab:'Survey',noHistory:'No history yet.',noRegistrations:'No registered events.',showQR:'Show QR Ticket',participated:'Attended',notYet:'Not yet',surveyTitle:'Satisfaction Survey',surveyNotice:'{n} survey(s) awaiting response',noSurveys:'No surveys yet',surveyRatingRequired:'Please select a rating',surveySubmit:'Submit',surveyThanks:'Thank you!',surveyCommentPlaceholder:'Comment (optional)',emailNotFound:'Email not found. Please sign up.',sending:'Sending...',invalidEmail:'Please enter a valid email',nameRequired:'Please enter your name',verifyingToken:'Verifying...',authError:'Invalid or expired link. Please log in again.',backToList:'Back to Events',participations:'Participations',rank:'Rank',payPayPending:'PayPay details will be sent by organizer.',cashNotice:'Please pay cash at the reception.',tokenExpired:'Link has expired',tokenExpiredDesc:'The link is valid for 24 hours. Please request a new link.',authErrorDesc:'Please request a new login link.'},
 };
-// 他の言語は英語にフォールバック
 ['zh','ko','es','fr','pt','id','th','vi','ar','hi','de','it','ru'].forEach(l => { I18N[l] = Object.assign({}, I18N.en); });
 I18N.zh.login='登录';I18N.zh.newRegister='注册';I18N.zh.sentTitle='链接已发送';I18N.zh.sendLoginLink='发送登录链接';I18N.zh.sendRegisterLink='注册并发送链接';
 I18N.ko.login='로그인';I18N.ko.newRegister='회원가입';I18N.ko.sentTitle='링크를 보냈습니다';I18N.ko.sendLoginLink='로그인 링크 보내기';I18N.ko.sendRegisterLink='가입하고 링크 보내기';
@@ -445,7 +412,7 @@ initSeasons();
 // ============================================================
 // 状態管理
 // ============================================================
-let currentUser     = null; // ログイン中の参加者
+let currentUser     = null;
 let currentEvent    = null;
 let currentEventIdx = 0;
 
@@ -517,21 +484,17 @@ function switchAuthTab(tab) {
 async function requestLink(mode) {
   const alertEl = document.getElementById(mode+'-alert');
   alertEl.innerHTML = '';
-
   const email = document.getElementById(mode+'-email').value.trim();
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     alertEl.innerHTML = '<div class="alert alert-danger">'+t('invalidEmail')+'</div>'; return;
   }
-
   let name = '';
   if (mode === 'register') {
     name = document.getElementById('register-name').value.trim();
     if (!name) { alertEl.innerHTML = '<div class="alert alert-danger">'+t('nameRequired')+'</div>'; return; }
   }
-
   const btn = document.querySelector('#auth-'+mode+' .btn-ai');
   btn.disabled = true; btn.textContent = t('sending');
-
   try {
     await api('requestMagicLink', { email, name, siteUrl: SITE_URL });
     document.getElementById('sent-email-display').textContent = email;
@@ -546,14 +509,12 @@ async function requestLink(mode) {
   btn.disabled = false; btn.textContent = mode==='login' ? t('sendLoginLink') : t('sendRegisterLink');
 }
 
-// Enter キー送信
 ['login-email','register-email','register-name'].forEach(id => {
   const el = document.getElementById(id);
   if (el) el.addEventListener('keydown', e => { if (e.key==='Enter') { const m = id.startsWith('login')?'login':'register'; requestLink(m); } });
 });
 
 async function verifyTokenAndLogin(token, pendingSurveyId) {
-  // 認証中は専用ローディング表示
   showPage('page-auth');
   const sentPanel = document.getElementById('auth-sent');
   sentPanel.innerHTML =
@@ -562,23 +523,16 @@ async function verifyTokenAndLogin(token, pendingSurveyId) {
       '<p data-i18n="verifyingToken">'+t('verifyingToken')+'</p>' +
     '</div>';
   switchAuthTab('sent');
-
   try {
     const participant = await api('verifyToken', { token });
     currentUser = participant;
-    // セッションに保存（トークンではなくユーザー情報のみ）
-    // ※ワンタイムなのでトークン自体は保存しない
     sessionStorage.setItem('auth_user', JSON.stringify(participant));
     updateHeader(participant);
-    // pending_survey（メールリンクからのアンケートID）を確認
     const surveyTarget = pendingSurveyId || sessionStorage.getItem('pending_survey');
     sessionStorage.removeItem('pending_survey');
-
     showPage('page-mypage');
     document.getElementById('btn-back').style.display = 'inline-flex';
     await loadMyPageData();
-
-    // アンケートIDがあれば満足度タブを開いて該当フォームにスクロール
     if (surveyTarget) {
       const surveyTabBtn = document.getElementById('survey-tab-btn');
       if (surveyTabBtn) {
@@ -597,7 +551,7 @@ async function verifyTokenAndLogin(token, pendingSurveyId) {
         '<h3>' + (isExpired ? t('tokenExpired') : t('authError')) + '</h3>' +
         '<p>' + (isExpired ? t('tokenExpiredDesc') : t('authErrorDesc')) + '</p>' +
       '</div>' +
-      '<button class="btn btn-outline btn-full" onclick="switchAuthTab(\'login\')" style="margin-top:16px;" data-i18n="backToLogin">'+t('backToLogin')+'</button>';
+      '<button class="btn btn-outline btn-full" onclick="switchAuthTab(\'login\')" style="margin-top:16px;">'+t('backToLogin')+'</button>';
   }
 }
 
@@ -613,21 +567,16 @@ function logout() {
 // ============================================================
 (async function init() {
   applyI18n();
-
-  // URLパラメータを確認
   const params   = new URLSearchParams(location.search);
   const token    = params.get('token');
   const surveyId = params.get('survey');
 
   if (token) {
-    // URLからトークンを除去（ブラウザ履歴に残さない）
     history.replaceState(null, '', location.pathname);
-    // survey パラメータも一緒に持ち越す
     await verifyTokenAndLogin(token, surveyId);
     return;
   }
 
-  // survey パラメータだけある場合（ログイン済みセッションから直接）
   if (surveyId) {
     history.replaceState(null, '', location.pathname);
     const savedUser = sessionStorage.getItem('auth_user');
@@ -638,7 +587,6 @@ function logout() {
         showPage('page-mypage');
         document.getElementById('btn-back').style.display = 'inline-flex';
         await loadMyPageData();
-        // 満足度タブを開いて該当フォームにスクロール
         const surveyTabBtn = document.getElementById('survey-tab-btn');
         if (surveyTabBtn) {
           switchMyTab('survey', surveyTabBtn);
@@ -650,13 +598,11 @@ function logout() {
         return;
       } catch(e) { sessionStorage.clear(); }
     }
-    // 未ログインなら認証画面へ（ログイン後に survey に飛ぶ）
     sessionStorage.setItem('pending_survey', surveyId);
     showPage('page-auth');
     return;
   }
 
-  // sessionStorageからユーザー情報を復元
   const savedUser = sessionStorage.getItem('auth_user');
   if (savedUser) {
     try {
@@ -665,7 +611,6 @@ function logout() {
       showPage('page-mypage');
       document.getElementById('btn-back').style.display = 'inline-flex';
       await loadMyPageData();
-      // pending_survey があれば満足度タブを開く
       const ps = sessionStorage.getItem('pending_survey');
       if (ps) {
         sessionStorage.removeItem('pending_survey');
@@ -682,7 +627,6 @@ function logout() {
     } catch(e) { sessionStorage.clear(); }
   }
 
-  // 未ログイン → 認証画面
   showPage('page-auth');
 })();
 
@@ -724,7 +668,7 @@ async function loadEvents() {
 }
 
 // ============================================================
-// 参加登録（ログイン済みユーザー情報を自動入力）
+// 参加登録
 // ============================================================
 function renderRegisterPage(ev, idx) {
   const si = idx % 4;
@@ -733,11 +677,8 @@ function renderRegisterPage(ev, idx) {
       '<div class="event-hero__name">'+esc(ev.EventName)+'</div>'+
       '<div class="event-hero__meta">'+esc(ev.Date)+'&emsp;'+esc(ev.Location)+'&emsp;'+(Number(ev.Price)===0?t('free'):'¥'+Number(ev.Price).toLocaleString())+'</div>'+
     '</div>';
-
-  // ユーザー情報を自動入力（編集不可）
   document.getElementById('inp-name').value  = currentUser ? currentUser.Name  : '';
   document.getElementById('inp-email').value = currentUser ? currentUser.Email : '';
-
   const payInfoEl = document.getElementById('payment-info'); payInfoEl.innerHTML = '';
   if (ev.PaymentType !== 'FREE') {
     let h = '<div class="payment-box">';
@@ -746,7 +687,6 @@ function renderRegisterPage(ev, idx) {
     if (ev.PaymentType==='PAYPAY_OR_CASH') h += '<p style="margin-top:6px;opacity:.7;">当日現金払いも可能です。</p>';
     h += '</div>'; payInfoEl.innerHTML = h;
   }
-
   document.getElementById('reg-alert').innerHTML = '';
   document.getElementById('reg-form').style.display   = 'block';
   document.getElementById('reg-result').style.display = 'none';
@@ -789,10 +729,26 @@ document.getElementById('btn-submit').addEventListener('click', async () => {
 });
 
 // ============================================================
-// マイページ
+// マイページ（★ 参加回数修正済み）
 // ============================================================
 async function loadMyPageData() {
   if (!currentUser) return;
+
+  // ★ 最新の参加者情報をGASから取得して参加回数・ランクを更新
+  try {
+    const participants = await api('getParticipants', { query: currentUser.Email });
+    if (participants && participants.length) {
+      const fresh = participants.find(p => p.Email === currentUser.Email) || participants[0];
+      // 名前・メール・ランク・参加回数を最新値で上書き
+      currentUser = Object.assign({}, currentUser, {
+        TotalEvents: fresh.TotalEvents,
+        Rank:        fresh.Rank,
+        Name:        fresh.Name,
+      });
+      sessionStorage.setItem('auth_user', JSON.stringify(currentUser));
+    }
+  } catch(e) { console.warn('参加者情報更新失敗', e); }
+
   const p = currentUser;
 
   document.getElementById('profile-card').innerHTML =
@@ -856,7 +812,6 @@ async function loadMyPageData() {
     if (mySurveys.length > 0) {
       document.getElementById('survey-tab-btn').style.display = 'block';
       renderMySurveys(mySurveys, p.ParticipantID);
-      // 未回答バッジ
       if (unanswered.length > 0) {
         const btn = document.getElementById('survey-tab-btn');
         btn.textContent = t('surveyTab') + ' (' + unanswered.length + ')';
@@ -885,7 +840,6 @@ function renderMySurveys(surveys, participantId) {
   let html = '';
   surveys.forEach(s => {
     if (s.Rating && Number(s.Rating) > 0) {
-      // 回答済み
       html +=
         '<div class="survey-done">'+
           '<div style="font-weight:700;margin-bottom:4px;">'+esc(s.EventName)+'</div>'+
@@ -893,7 +847,6 @@ function renderMySurveys(surveys, participantId) {
           (s.Comment?'<div style="margin-top:3px;font-size:.8rem;color:var(--ai-mid);">'+esc(s.Comment)+'</div>':'')+
         '</div>';
     } else {
-      // 未回答フォーム
       const sid = 'srv_'+s.SurveyID;
       html +=
         '<div class="survey-form" id="sf-'+esc(s.SurveyID)+'">'+
