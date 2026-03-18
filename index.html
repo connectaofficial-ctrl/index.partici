@@ -403,11 +403,13 @@
     <div class="card">
       <div class="tabs">
         <button class="tab-btn active" onclick="switchMyTab('history',this)" data-i18n="historyTab">参加履歴</button>
+        <button class="tab-btn" onclick="switchMyTab('events',this)" data-i18n="myEventsTab">イベント詳細</button>
         <button class="tab-btn" id="survey-tab-btn" onclick="switchMyTab('survey',this)" data-i18n="surveyTab" style="display:none;">満足度調査</button>
         <button class="tab-btn" onclick="switchMyTab('profile-edit',this)" data-i18n="profileTab">プロフィール</button>
         <button class="tab-btn tab-logout" onclick="logout()" data-i18n="logout">ログアウト</button>
       </div>
       <div id="my-history"></div>
+      <div id="my-events" style="display:none;"></div>
       <div id="my-survey" style="display:none;"></div>
       <div id="my-profile-edit" style="display:none;"></div>
     </div>
@@ -465,8 +467,12 @@ const I18N = {
     regSuccess:'登録完了！チケットをメールで送信しました。',
     regFull:'満席のため登録できません。', regDuplicate:'すでに登録済みです。',
     registering:'登録中...', ticketTitle:'QR チケット',
-    historyTab:'参加履歴', surveyTab:'満足度調査', profileTab:'プロフィール',
+    historyTab:'参加履歴', myEventsTab:'イベント詳細', surveyTab:'満足度調査', profileTab:'プロフィール',
     noHistory:'まだ参加履歴がありません。', participated:'参加済み',
+    myEventsTitle:'登録イベント一覧', noMyEvents:'まだ登録しているイベントはありません。',
+    evDate:'日時', evVenue:'会場', evPrice:'参加費', evPayment:'支払い', evCheckin:'入場', evRegisteredAt:'登録日', evSurvey:'満足度',
+    payFree:'無料', payUnpaid:'未払い', payPaypayPending:'PayPay確認中', payPaypayPaid:'PayPay支払済', payCash:'現金',
+    checkinDone:'入場済み', checkinPending:'未入場', showQRBtn:'QRを表示',
     surveyTitle:'満足度アンケート', surveyRatingRequired:'評価を選択してください',
     surveySubmit:'送信する', surveyThanks:'回答ありがとうございました！',
     surveyComment:'一言コメント（任意）', noSurveys:'まだアンケートはありません',
@@ -501,8 +507,12 @@ const I18N = {
     regSuccess:'Registration complete! Your ticket has been emailed.',
     regFull:'Sorry, this event is full.', regDuplicate:'You are already registered for this event.',
     registering:'Registering...', ticketTitle:'QR Ticket',
-    historyTab:'History', surveyTab:'Survey', profileTab:'Profile',
+    historyTab:'History', myEventsTab:'My Events', surveyTab:'Survey', profileTab:'Profile',
     noHistory:'No participation history yet.', participated:'Attended',
+    myEventsTitle:'My Registered Events', noMyEvents:'You have no registered events yet.',
+    evDate:'Date', evVenue:'Venue', evPrice:'Price', evPayment:'Payment', evCheckin:'Check-in', evRegisteredAt:'Registered', evSurvey:'Rating',
+    payFree:'Free', payUnpaid:'Unpaid', payPaypayPending:'PayPay Pending', payPaypayPaid:'PayPay Paid', payCash:'Cash',
+    checkinDone:'Attended', checkinPending:'Not yet', showQRBtn:'Show QR',
     surveyTitle:'Satisfaction Survey', surveyRatingRequired:'Please select a rating',
     surveySubmit:'Submit', surveyThanks:'Thank you for your feedback!',
     surveyComment:'Comment (optional)', noSurveys:'No surveys available yet',
@@ -537,8 +547,12 @@ const I18N = {
     regSuccess:'报名成功！票券已发送到您的邮箱。',
     regFull:'抱歉，该活动名额已满。', regDuplicate:'您已报名参加此活动。',
     registering:'报名中...', ticketTitle:'QR 票券',
-    historyTab:'参加记录', surveyTab:'满意度调查', profileTab:'个人资料',
+    historyTab:'参加记录', myEventsTab:'活动详情', surveyTab:'满意度调查', profileTab:'个人资料',
     noHistory:'暂无参加记录。', participated:'已参加',
+    myEventsTitle:'我的报名活动', noMyEvents:'您还没有报名任何活动。',
+    evDate:'时间', evVenue:'地点', evPrice:'费用', evPayment:'付款', evCheckin:'签到', evRegisteredAt:'报名日', evSurvey:'评分',
+    payFree:'免费', payUnpaid:'未付款', payPaypayPending:'PayPay待确认', payPaypayPaid:'PayPay已付', payCash:'现金',
+    checkinDone:'已签到', checkinPending:'未签到', showQRBtn:'显示QR',
     surveyTitle:'满意度问卷', surveyRatingRequired:'请选择评分',
     surveySubmit:'提交', surveyThanks:'感谢您的反馈！',
     surveyComment:'留言（选填）', noSurveys:'暂无调查问卷',
@@ -573,8 +587,12 @@ const I18N = {
     regSuccess:'신청 완료! 티켓을 이메일로 발송했습니다.',
     regFull:'죄송합니다, 이 이벤트는 마감되었습니다.', regDuplicate:'이미 신청하셨습니다.',
     registering:'신청 중...', ticketTitle:'QR 티켓',
-    historyTab:'참가 기록', surveyTab:'만족도 조사', profileTab:'프로필',
+    historyTab:'참가 기록', myEventsTab:'이벤트 상세', surveyTab:'만족도 조사', profileTab:'프로필',
     noHistory:'아직 참가 기록이 없습니다.', participated:'참가 완료',
+    myEventsTitle:'등록된 이벤트', noMyEvents:'아직 등록된 이벤트가 없습니다.',
+    evDate:'일시', evVenue:'장소', evPrice:'참가비', evPayment:'결제', evCheckin:'체크인', evRegisteredAt:'등록일', evSurvey:'평점',
+    payFree:'무료', payUnpaid:'미결제', payPaypayPending:'PayPay 확인중', payPaypayPaid:'PayPay 결제완료', payCash:'현금',
+    checkinDone:'입장완료', checkinPending:'미입장', showQRBtn:'QR 보기',
     surveyTitle:'만족도 설문', surveyRatingRequired:'평점을 선택해 주세요',
     surveySubmit:'제출', surveyThanks:'소중한 의견 감사합니다!',
     surveyComment:'코멘트 (선택)', noSurveys:'아직 설문이 없습니다',
@@ -609,8 +627,12 @@ const I18N = {
     regSuccess:'¡Inscripción completada! Tu ticket ha sido enviado por correo.',
     regFull:'Lo sentimos, este evento está completo.', regDuplicate:'Ya estás inscrito en este evento.',
     registering:'Inscribiendo...', ticketTitle:'Ticket QR',
-    historyTab:'Historial', surveyTab:'Encuesta', profileTab:'Perfil',
+    historyTab:'Historial', myEventsTab:'Mis Eventos', surveyTab:'Encuesta', profileTab:'Perfil',
     noHistory:'Aún no tienes historial de participación.', participated:'Asististe',
+    myEventsTitle:'Mis Eventos Registrados', noMyEvents:'Aún no tienes eventos registrados.',
+    evDate:'Fecha', evVenue:'Lugar', evPrice:'Precio', evPayment:'Pago', evCheckin:'Check-in', evRegisteredAt:'Registrado', evSurvey:'Calificación',
+    payFree:'Gratis', payUnpaid:'No pagado', payPaypayPending:'PayPay pendiente', payPaypayPaid:'PayPay pagado', payCash:'Efectivo',
+    checkinDone:'Asistido', checkinPending:'Pendiente', showQRBtn:'Ver QR',
     surveyTitle:'Encuesta de satisfacción', surveyRatingRequired:'Por favor selecciona una puntuación',
     surveySubmit:'Enviar', surveyThanks:'¡Gracias por tu opinión!',
     surveyComment:'Comentario (opcional)', noSurveys:'No hay encuestas disponibles aún',
@@ -645,8 +667,12 @@ const I18N = {
     regSuccess:'Inscription réussie ! Votre ticket a été envoyé par e-mail.',
     regFull:"Désolé, cet événement est complet.", regDuplicate:'Vous êtes déjà inscrit à cet événement.',
     registering:'Inscription en cours...', ticketTitle:'Ticket QR',
-    historyTab:'Historique', surveyTab:'Sondage', profileTab:'Profil',
+    historyTab:'Historique', myEventsTab:'Mes Événements', surveyTab:'Sondage', profileTab:'Profil',
     noHistory:"Pas encore d'historique de participation.", participated:'Participé',
+    myEventsTitle:'Mes événements inscrits', noMyEvents:"Vous n'avez pas encore d'événements inscrits.",
+    evDate:'Date', evVenue:'Lieu', evPrice:'Prix', evPayment:'Paiement', evCheckin:'Check-in', evRegisteredAt:'Inscrit le', evSurvey:'Note',
+    payFree:'Gratuit', payUnpaid:'Non payé', payPaypayPending:'PayPay en attente', payPaypayPaid:'PayPay payé', payCash:'Espèces',
+    checkinDone:'Participé', checkinPending:'En attente', showQRBtn:'Voir QR',
     surveyTitle:'Enquête de satisfaction', surveyRatingRequired:'Veuillez sélectionner une note',
     surveySubmit:'Envoyer', surveyThanks:'Merci pour votre avis !',
     surveyComment:'Commentaire (optionnel)', noSurveys:'Aucune enquête disponible pour le moment',
@@ -681,8 +707,12 @@ const I18N = {
     regSuccess:'Inscrição realizada! Seu ticket foi enviado por e-mail.',
     regFull:'Desculpe, este evento está lotado.', regDuplicate:'Você já está inscrito neste evento.',
     registering:'Inscrevendo...', ticketTitle:'Ticket QR',
-    historyTab:'Histórico', surveyTab:'Pesquisa', profileTab:'Perfil',
+    historyTab:'Histórico', myEventsTab:'Meus Eventos', surveyTab:'Pesquisa', profileTab:'Perfil',
     noHistory:'Ainda não há histórico de participação.', participated:'Participou',
+    myEventsTitle:'Meus Eventos Registrados', noMyEvents:'Você ainda não tem eventos registrados.',
+    evDate:'Data', evVenue:'Local', evPrice:'Preço', evPayment:'Pagamento', evCheckin:'Check-in', evRegisteredAt:'Registrado em', evSurvey:'Avaliação',
+    payFree:'Gratuito', payUnpaid:'Não pago', payPaypayPending:'PayPay pendente', payPaypayPaid:'PayPay pago', payCash:'Dinheiro',
+    checkinDone:'Participou', checkinPending:'Pendente', showQRBtn:'Ver QR',
     surveyTitle:'Pesquisa de satisfação', surveyRatingRequired:'Por favor, selecione uma avaliação',
     surveySubmit:'Enviar', surveyThanks:'Obrigado pelo seu feedback!',
     surveyComment:'Comentário (opcional)', noSurveys:'Nenhuma pesquisa disponível ainda',
@@ -717,8 +747,12 @@ const I18N = {
     regSuccess:'Pendaftaran selesai! Tiket telah dikirim ke email Anda.',
     regFull:'Maaf, acara ini sudah penuh.', regDuplicate:'Anda sudah terdaftar di acara ini.',
     registering:'Mendaftar...', ticketTitle:'Tiket QR',
-    historyTab:'Riwayat', surveyTab:'Survei', profileTab:'Profil',
+    historyTab:'Riwayat', myEventsTab:'Detail Acara', surveyTab:'Survei', profileTab:'Profil',
     noHistory:'Belum ada riwayat partisipasi.', participated:'Hadir',
+    myEventsTitle:'Acara Terdaftar Saya', noMyEvents:'Anda belum memiliki acara yang terdaftar.',
+    evDate:'Tanggal', evVenue:'Tempat', evPrice:'Harga', evPayment:'Pembayaran', evCheckin:'Check-in', evRegisteredAt:'Terdaftar', evSurvey:'Penilaian',
+    payFree:'Gratis', payUnpaid:'Belum bayar', payPaypayPending:'PayPay menunggu', payPaypayPaid:'PayPay dibayar', payCash:'Tunai',
+    checkinDone:'Hadir', checkinPending:'Belum hadir', showQRBtn:'Lihat QR',
     surveyTitle:'Survei kepuasan', surveyRatingRequired:'Pilih penilaian',
     surveySubmit:'Kirim', surveyThanks:'Terima kasih atas masukan Anda!',
     surveyComment:'Komentar (opsional)', noSurveys:'Belum ada survei tersedia',
@@ -753,8 +787,12 @@ const I18N = {
     regSuccess:'ลงทะเบียนสำเร็จ! ตั๋วของคุณถูกส่งทางอีเมลแล้ว',
     regFull:'ขออภัย กิจกรรมนี้เต็มแล้ว', regDuplicate:'คุณได้ลงทะเบียนกิจกรรมนี้แล้ว',
     registering:'กำลังลงทะเบียน...', ticketTitle:'ตั๋ว QR',
-    historyTab:'ประวัติ', surveyTab:'แบบสำรวจ', profileTab:'โปรไฟล์',
+    historyTab:'ประวัติ', myEventsTab:'รายละเอียดกิจกรรม', surveyTab:'แบบสำรวจ', profileTab:'โปรไฟล์',
     noHistory:'ยังไม่มีประวัติการเข้าร่วม', participated:'เข้าร่วมแล้ว',
+    myEventsTitle:'กิจกรรมที่ลงทะเบียน', noMyEvents:'คุณยังไม่มีกิจกรรมที่ลงทะเบียน',
+    evDate:'วันที่', evVenue:'สถานที่', evPrice:'ราคา', evPayment:'การชำระเงิน', evCheckin:'เช็คอิน', evRegisteredAt:'วันที่ลงทะเบียน', evSurvey:'คะแนน',
+    payFree:'ฟรี', payUnpaid:'ยังไม่ชำระ', payPaypayPending:'PayPay รอดำเนินการ', payPaypayPaid:'PayPay ชำระแล้ว', payCash:'เงินสด',
+    checkinDone:'เช็คอินแล้ว', checkinPending:'ยังไม่เช็คอิน', showQRBtn:'แสดง QR',
     surveyTitle:'แบบสำรวจความพึงพอใจ', surveyRatingRequired:'กรุณาเลือกคะแนน',
     surveySubmit:'ส่ง', surveyThanks:'ขอบคุณสำหรับความคิดเห็นของคุณ!',
     surveyComment:'ความคิดเห็น (ไม่บังคับ)', noSurveys:'ยังไม่มีแบบสำรวจ',
@@ -789,8 +827,12 @@ const I18N = {
     regSuccess:'Đăng ký thành công! Vé của bạn đã được gửi qua email.',
     regFull:'Xin lỗi, sự kiện này đã hết chỗ.', regDuplicate:'Bạn đã đăng ký sự kiện này rồi.',
     registering:'Đang đăng ký...', ticketTitle:'Vé QR',
-    historyTab:'Lịch sử', surveyTab:'Khảo sát', profileTab:'Hồ sơ',
+    historyTab:'Lịch sử', myEventsTab:'Chi tiết sự kiện', surveyTab:'Khảo sát', profileTab:'Hồ sơ',
     noHistory:'Chưa có lịch sử tham dự.', participated:'Đã tham dự',
+    myEventsTitle:'Sự kiện đã đăng ký', noMyEvents:'Bạn chưa đăng ký sự kiện nào.',
+    evDate:'Ngày', evVenue:'Địa điểm', evPrice:'Giá', evPayment:'Thanh toán', evCheckin:'Check-in', evRegisteredAt:'Ngày đăng ký', evSurvey:'Đánh giá',
+    payFree:'Miễn phí', payUnpaid:'Chưa trả', payPaypayPending:'PayPay đang chờ', payPaypayPaid:'PayPay đã thanh toán', payCash:'Tiền mặt',
+    checkinDone:'Đã tham dự', checkinPending:'Chưa tham dự', showQRBtn:'Hiện QR',
     surveyTitle:'Khảo sát sự hài lòng', surveyRatingRequired:'Vui lòng chọn đánh giá',
     surveySubmit:'Gửi', surveyThanks:'Cảm ơn phản hồi của bạn!',
     surveyComment:'Nhận xét (không bắt buộc)', noSurveys:'Chưa có khảo sát nào',
@@ -825,8 +867,12 @@ const I18N = {
     regSuccess:'تم التسجيل بنجاح! تم إرسال تذكرتك عبر البريد الإلكتروني.',
     regFull:'عذراً، هذه الفعالية ممتلئة.', regDuplicate:'لقد سجّلت بالفعل في هذه الفعالية.',
     registering:'جارٍ التسجيل...', ticketTitle:'تذكرة QR',
-    historyTab:'السجل', surveyTab:'الاستطلاع', profileTab:'الملف الشخصي',
+    historyTab:'السجل', myEventsTab:'تفاصيل الفعالية', surveyTab:'الاستطلاع', profileTab:'الملف الشخصي',
     noHistory:'لا يوجد سجل مشاركة حتى الآن.', participated:'حضر',
+    myEventsTitle:'الفعاليات المسجلة', noMyEvents:'لم تسجل في أي فعالية بعد.',
+    evDate:'التاريخ', evVenue:'المكان', evPrice:'السعر', evPayment:'الدفع', evCheckin:'تسجيل الحضور', evRegisteredAt:'تاريخ التسجيل', evSurvey:'التقييم',
+    payFree:'مجاني', payUnpaid:'غير مدفوع', payPaypayPending:'PayPay معلق', payPaypayPaid:'PayPay مدفوع', payCash:'نقدي',
+    checkinDone:'حضر', checkinPending:'لم يحضر بعد', showQRBtn:'عرض QR',
     surveyTitle:'استطلاع الرضا', surveyRatingRequired:'يرجى تحديد تقييم',
     surveySubmit:'إرسال', surveyThanks:'شكراً على ملاحظاتك!',
     surveyComment:'تعليق (اختياري)', noSurveys:'لا توجد استطلاعات متاحة حتى الآن',
@@ -861,8 +907,12 @@ const I18N = {
     regSuccess:'पंजीकरण सफल! आपका टिकट ईमेल पर भेजा गया है।',
     regFull:'क्षमा करें, यह कार्यक्रम भरा हुआ है।', regDuplicate:'आप पहले से इस कार्यक्रम के लिए पंजीकृत हैं।',
     registering:'पंजीकरण हो रहा है...', ticketTitle:'QR टिकट',
-    historyTab:'इतिहास', surveyTab:'सर्वेक्षण', profileTab:'प्रोफ़ाइल',
+    historyTab:'इतिहास', myEventsTab:'कार्यक्रम विवरण', surveyTab:'सर्वेक्षण', profileTab:'प्रोफ़ाइल',
     noHistory:'अभी तक कोई भागीदारी इतिहास नहीं।', participated:'भाग लिया',
+    myEventsTitle:'पंजीकृत कार्यक्रम', noMyEvents:'आपने अभी तक कोई कार्यक्रम पंजीकृत नहीं किया।',
+    evDate:'तारीख', evVenue:'स्थान', evPrice:'मूल्य', evPayment:'भुगतान', evCheckin:'चेक-इन', evRegisteredAt:'पंजीकृत', evSurvey:'रेटिंग',
+    payFree:'निःशुल्क', payUnpaid:'अदेय', payPaypayPending:'PayPay प्रतीक्षा', payPaypayPaid:'PayPay भुगतान', payCash:'नकद',
+    checkinDone:'उपस्थित', checkinPending:'अनुपस्थित', showQRBtn:'QR दिखाएं',
     surveyTitle:'संतुष्टि सर्वेक्षण', surveyRatingRequired:'कृपया एक रेटिंग चुनें',
     surveySubmit:'सबमिट करें', surveyThanks:'आपकी प्रतिक्रिया के लिए धन्यवाद!',
     surveyComment:'टिप्पणी (वैकल्पिक)', noSurveys:'अभी तक कोई सर्वेक्षण उपलब्ध नहीं',
@@ -897,8 +947,12 @@ const I18N = {
     regSuccess:'Anmeldung erfolgreich! Dein Ticket wurde per E-Mail gesendet.',
     regFull:'Leider ist diese Veranstaltung ausgebucht.', regDuplicate:'Du bist bereits für diese Veranstaltung angemeldet.',
     registering:'Wird angemeldet...', ticketTitle:'QR-Ticket',
-    historyTab:'Verlauf', surveyTab:'Umfrage', profileTab:'Profil',
+    historyTab:'Verlauf', myEventsTab:'Meine Events', surveyTab:'Umfrage', profileTab:'Profil',
     noHistory:'Noch kein Teilnahmeverlauf.', participated:'Teilgenommen',
+    myEventsTitle:'Meine registrierten Events', noMyEvents:'Sie haben noch keine registrierten Events.',
+    evDate:'Datum', evVenue:'Ort', evPrice:'Preis', evPayment:'Zahlung', evCheckin:'Check-in', evRegisteredAt:'Registriert am', evSurvey:'Bewertung',
+    payFree:'Kostenlos', payUnpaid:'Nicht bezahlt', payPaypayPending:'PayPay ausstehend', payPaypayPaid:'PayPay bezahlt', payCash:'Bargeld',
+    checkinDone:'Teilgenommen', checkinPending:'Ausstehend', showQRBtn:'QR anzeigen',
     surveyTitle:'Zufriedenheitsumfrage', surveyRatingRequired:'Bitte wähle eine Bewertung',
     surveySubmit:'Absenden', surveyThanks:'Vielen Dank für dein Feedback!',
     surveyComment:'Kommentar (optional)', noSurveys:'Noch keine Umfragen verfügbar',
@@ -933,8 +987,12 @@ const I18N = {
     regSuccess:"Iscrizione completata! Il tuo ticket è stato inviato via email.",
     regFull:"Spiacenti, questo evento è al completo.", regDuplicate:'Sei già iscritto a questo evento.',
     registering:'Iscrizione in corso...', ticketTitle:'Ticket QR',
-    historyTab:'Cronologia', surveyTab:'Sondaggio', profileTab:'Profilo',
+    historyTab:'Cronologia', myEventsTab:'I Miei Eventi', surveyTab:'Sondaggio', profileTab:'Profilo',
     noHistory:'Ancora nessuno storico di partecipazione.', participated:'Partecipato',
+    myEventsTitle:'I miei eventi registrati', noMyEvents:'Non hai ancora eventi registrati.',
+    evDate:'Data', evVenue:'Luogo', evPrice:'Prezzo', evPayment:'Pagamento', evCheckin:'Check-in', evRegisteredAt:'Registrato il', evSurvey:'Valutazione',
+    payFree:'Gratuito', payUnpaid:'Non pagato', payPaypayPending:'PayPay in attesa', payPaypayPaid:'PayPay pagato', payCash:'Contanti',
+    checkinDone:'Partecipato', checkinPending:'In attesa', showQRBtn:'Mostra QR',
     surveyTitle:'Sondaggio di soddisfazione', surveyRatingRequired:'Seleziona una valutazione',
     surveySubmit:'Invia', surveyThanks:'Grazie per il tuo feedback!',
     surveyComment:'Commento (opzionale)', noSurveys:'Nessun sondaggio disponibile al momento',
@@ -969,8 +1027,12 @@ const I18N = {
     regSuccess:'Регистрация завершена! Ваш билет отправлен на электронную почту.',
     regFull:'Извините, это мероприятие заполнено.', regDuplicate:'Вы уже зарегистрированы на это мероприятие.',
     registering:'Регистрация...', ticketTitle:'QR-билет',
-    historyTab:'История', surveyTab:'Опрос', profileTab:'Профиль',
+    historyTab:'История', myEventsTab:'Мои Мероприятия', surveyTab:'Опрос', profileTab:'Профиль',
     noHistory:'Нет истории участия.', participated:'Посетил',
+    myEventsTitle:'Мои зарегистрированные мероприятия', noMyEvents:'У вас ещё нет зарегистрированных мероприятий.',
+    evDate:'Дата', evVenue:'Место', evPrice:'Цена', evPayment:'Оплата', evCheckin:'Регистрация', evRegisteredAt:'Дата регистрации', evSurvey:'Оценка',
+    payFree:'Бесплатно', payUnpaid:'Не оплачено', payPaypayPending:'PayPay ожидает', payPaypayPaid:'PayPay оплачено', payCash:'Наличные',
+    checkinDone:'Участвовал', checkinPending:'Ожидается', showQRBtn:'Показать QR',
     surveyTitle:'Опрос удовлетворённости', surveyRatingRequired:'Пожалуйста, выберите оценку',
     surveySubmit:'Отправить', surveyThanks:'Спасибо за ваш отзыв!',
     surveyComment:'Комментарий (необязательно)', noSurveys:'Опросов пока нет',
@@ -1298,10 +1360,62 @@ async function loadMyPageData(){
 
 function switchMyTab(tab,btn){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  ['my-history','my-survey','my-profile-edit'].forEach(id=>document.getElementById(id).style.display='none');
+  ['my-history','my-events','my-survey','my-profile-edit'].forEach(id=>document.getElementById(id).style.display='none');
   document.getElementById('my-'+tab).style.display='block';
   if(btn)btn.classList.add('active');
   if(tab==='profile-edit')renderProfileEdit();
+  if(tab==='events')loadMyEvents();
+}
+
+// ══════════════════════════════════════════════
+// My Events (登録イベント詳細)
+// ══════════════════════════════════════════════
+async function loadMyEvents(){
+  if(!currentUser)return;
+  const el=document.getElementById('my-events');
+  el.innerHTML='<div class="spinner"></div>';
+  try{
+    const events=await api('getMyEventDetails',{participantId:currentUser.ParticipantID});
+    if(!events||!events.length){
+      el.innerHTML='<div class="alert alert-info">'+t('noMyEvents')+'</div>';
+      return;
+    }
+    let html='<div style="display:grid;gap:14px;">';
+    events.forEach(ev=>{
+      const isChecked=ev.checkinStatus===true||ev.checkinStatus==='TRUE'||ev.checkinStatus==='true';
+      const payLabel={'FREE':t('payFree'),'UNPAID':t('payUnpaid'),'PAYPAY_PENDING':t('payPaypayPending'),'PAYPAY_PAID':t('payPaypayPaid'),'CASH':t('payCash')}[ev.paymentStatus]||ev.paymentStatus||'—';
+      const surveyStars=ev.surveyRating?'★'.repeat(Math.round(ev.surveyRating))+'☆'.repeat(5-Math.round(ev.surveyRating)):'—';
+      const accent=['var(--rose)','var(--violet)','var(--amber)','var(--sky)'][Math.floor(Math.random()*4)];
+      html+=`
+        <div style="background:var(--white);border-radius:var(--r);border:1px solid var(--border);border-left:4px solid ${accent};box-shadow:var(--s1);overflow:hidden;">
+          <div style="padding:16px 18px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <div style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:1rem;color:var(--ink);">${esc(ev.eventName)}</div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="display:inline-block;padding:2px 9px;border-radius:99px;font-size:.7rem;font-weight:700;${isChecked?'background:rgba(61,102,64,.1);color:var(--green);':'background:var(--bg2);color:var(--ink-soft);'}">${isChecked?t('checkinDone'):t('checkinPending')}</span>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;">
+              <div style="font-size:.78rem;"><span style="color:var(--ink-soft);margin-right:5px;">${t('evDate')}</span><strong>${esc(ev.date||'—')}</strong></div>
+              <div style="font-size:.78rem;"><span style="color:var(--ink-soft);margin-right:5px;">${t('evVenue')}</span><strong>${esc(ev.location||'—')}</strong></div>
+              <div style="font-size:.78rem;"><span style="color:var(--ink-soft);margin-right:5px;">${t('evPrice')}</span><strong>${ev.price===0?t('payFree'):'¥'+Number(ev.price).toLocaleString()}</strong></div>
+              <div style="font-size:.78rem;"><span style="color:var(--ink-soft);margin-right:5px;">${t('evPayment')}</span><strong>${payLabel}</strong></div>
+              <div style="font-size:.78rem;"><span style="color:var(--ink-soft);margin-right:5px;">${t('evRegisteredAt')}</span><strong>${esc(ev.registeredAt||'—')}</strong></div>
+              ${ev.surveyRating?`<div style="font-size:.78rem;"><span style="color:var(--ink-soft);margin-right:5px;">${t('evSurvey')}</span><strong style="color:#f59e0b;">${surveyStars}</strong></div>`:''}
+            </div>
+            ${ev.surveyComment?`<div style="margin-top:8px;padding:8px 12px;background:var(--bg2);border-radius:var(--rs);font-size:.76rem;color:var(--ink-mid);line-height:1.6;">${esc(ev.surveyComment)}</div>`:''}
+          </div>
+          ${ev.qrData?`
+          <div style="border-top:1px solid var(--border);padding:10px 18px;display:flex;justify-content:flex-end;">
+            <button class="btn-primary" style="padding:7px 18px;font-size:.78rem;" onclick="openQR('${esc(ev.eventName)}','${esc(ev.date)}','${esc(ev.qrData)}','${esc(ev.registrationId)}')">${t('showQRBtn')}</button>
+          </div>`:''}
+        </div>`;
+    });
+    html+='</div>';
+    el.innerHTML=html;
+  }catch(err){
+    el.innerHTML='<div class="alert alert-err">'+esc(err.message)+'</div>';
+  }
 }
 
 function renderSurveys(surveys,participantId){
