@@ -1799,6 +1799,20 @@ document.getElementById('btn-ev-submit').addEventListener('click',async()=>{
 });
 
 // ── NEWS ──
+// ── ニュース翻訳：Admin側で保存済みの翻訳を使用 ──
+// GASのLanguageApp.translate()でAdmin投稿時に翻訳済み
+
+function getNewsTranslated(item){
+  // item.translations = {en:{title,body}, zh:{title,body}, ...}
+  if(currentLang === 'ja' || !item.translations) return item;
+  const tr = item.translations[currentLang];
+  if(!tr) return item; // 翻訳なければ原文（日本語）を表示
+  return Object.assign({}, item, {
+    title: tr.title || item.title,
+    body:  tr.body  || item.body
+  });
+}
+
 function showNewsPage(){
   if(!currentUser){showPage('page-login');return;}
   showPage('page-news'); renderNews();
@@ -1808,6 +1822,26 @@ function filterNews(f, btn){
   document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
   if(btn) btn.classList.add('active');
   renderNews();
+}
+function renderNewsCard(n, translated, i){
+  const read = isNewsRead(n.id);
+  const date = new Date(n.createdAt).toLocaleDateString('ja-JP',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  const isPersonal = n.userId && n.userId===currentUser.ParticipantID;
+  const div = document.createElement('div');
+  div.className = 'news-card' + (read ? '' : ' unread');
+  div.style.animationDelay = (i * 0.06) + 's';
+  div.setAttribute('onclick', "openNewsDetail('" + esc(n.id) + "')");
+  div.innerHTML =
+    '<div class="news-card-head">' +
+    '<div class="news-card-badges">' +
+    (!read ? '<span class="badge badge-new">' + t('badge_new') + '</span>' : '') +
+    (isPersonal ? '<span class="badge badge-personal">' + t('badge_personal') + '</span>' : '<span class="badge badge-global">' + t('badge_global') + '</span>') +
+    '</div>' +
+    '<span class="news-card-date">' + date + '</span>' +
+    '</div>' +
+    '<div class="news-card-title">' + esc(translated.title) + '</div>' +
+    '<div class="news-card-body">' + esc(translated.body) + '</div>';
+  return div.outerHTML;
 }
 function renderNews(){
   if(!currentUser) return;
@@ -1821,40 +1855,28 @@ function renderNews(){
     el.innerHTML='<div class="news-empty"><div style="display:flex;justify-content:center;margin-bottom:12px;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" style="color:var(--ink-pale);"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div><p>'+t('news_empty')+'</p></div>';
     return;
   }
-  el.innerHTML = items.map((n,i)=>{
-    const read = isNewsRead(n.id);
-    const date = new Date(n.createdAt).toLocaleDateString('ja-JP',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
-    const isPersonal = n.userId && n.userId===currentUser.ParticipantID;
-    return `<div class="news-card${read?'':' unread'}" onclick="openNewsDetail('${esc(n.id)}')" style="animation-delay:${i*.06}s">
-      <div class="news-card-head">
-        <div class="news-card-badges">
-          ${!read?'<span class="badge badge-new">NEW</span>':''}
-          ${isPersonal?('<span class="badge badge-personal">'+t('badge_personal')+'</span>'):('<span class="badge badge-global">'+t('badge_global')+'</span>')}
-        </div>
-        <span class="news-card-date">${date}</span>
-      </div>
-      <div class="news-card-title">${esc(n.title)}</div>
-      <div class="news-card-body">${esc(n.body)}</div>
-    </div>`;
-  }).join('');
+  // 保存済み翻訳を使って即座に表示
+  el.innerHTML = items.map((n,i) => renderNewsCard(n, getNewsTranslated(n), i)).join('');
   updateBadges();
 }
 function openNewsDetail(id){
   markNewsRead(id);
   const items = getNewsItems(currentUser.ParticipantID);
-  const n = items.find(x=>x.id===id);
+  const n = items.find(function(x){return x.id===id;});
   if(!n) return;
+  const translated = getNewsTranslated(n);
   const date = new Date(n.createdAt).toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'});
   const isPersonal = n.userId && n.userId===currentUser.ParticipantID;
-  document.getElementById('nm-title').textContent = n.title;
+  document.getElementById('nm-title').textContent = translated.title;
   document.getElementById('nm-meta').innerHTML =
     (isPersonal?'<span class="badge badge-personal">'+t('badge_personal_notif')+'</span>':'<span class="badge badge-global">'+t('badge_global')+'</span>')+
-    `<span style="font-size:.74rem;color:var(--ink-soft);">${date}</span>`;
-  document.getElementById('nm-body').textContent = n.body;
+    '<span style="font-size:.74rem;color:var(--ink-soft);">'+date+'</span>';
+  document.getElementById('nm-body').textContent = translated.body;
   document.getElementById('news-modal').style.display='flex';
   setTimeout(renderNews, 100);
   updateBadges();
 }
+
 
 // ── MY PAGE ──
 function showMyPage(){
